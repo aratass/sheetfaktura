@@ -1,0 +1,27 @@
+:root { --ink: #1f2328; --muted: #57606a; --brand: #1a5490; --line: #d8dee4; --bg: #ffffff; --soft: #f3f6fa; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+header { border-bottom: 1px solid var(--line); background: #fff; }
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+header img { width: 36px; height: 36px; }
+header a.brand { font-weight: 700; color: var(--brand); text-decoration: none; font-size: 18px; }
+header nav { margin-left: auto; display: flex; gap: 16px; font-size: 14px; flex-wrap: wrap; }
+header nav a { color: var(--muted); text-decoration: none; }
+main { padding: 28px 0 48px; }
+h1 { font-size: 30px; line-height: 1.25; margin: 0 0 12px; }
+h2 { font-size: 21px; margin: 32px 0 8px; }
+h3 { font-size: 17px; margin: 22px 0 6px; }
+p, li { font-size: 16px; }
+.lead { font-size: 18px; color: var(--muted); }
+.box { background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; margin: 18px 0; }
+.cta { display: inline-block; background: var(--brand); color: #fff; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.grid .box { margin: 0; }
+mark.ph { background: #fff3b0; padding: 0 3px; border-radius: 3px; font-weight: 600; }
+.draft { background: #fff3b0; border: 1px solid #e3c766; border-radius: 6px; padding: 10px 14px; font-size: 14px; }
+footer { border-top: 1px solid var(--line); padding: 20px 0 40px; font-size: 14px; color: var(--muted); }
+footer a { color: var(--muted); margin-right: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; }
+td, th { border: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+@media (max-width: 600px) { header .wrap { height: auto; padding: 10px 16px; flex-wrap: wrap; } header nav { margin-left: 0; } h1 { font-size: 25px; } }
