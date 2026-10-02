@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZUGFeRD-Rechnung aus Google Sheets erstellen | SheetFaktura</title>
+<meta name="description" content="ZUGFeRD-Rechnung (Factur-X, PDF/A-3 mit XML, Profil EN 16931) direkt aus Google Sheets erstellen. Welches Profil zählt als E-Rechnung und wie es mit SheetFaktura geht.">
+<link rel="canonical" href="https://sheetfaktura.de/zugferd-google-sheets.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>.shot{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0 4px}.cap{font-size:14px;color:var(--muted);margin:0 0 18px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Welches ZUGFeRD-Profil zählt als E-Rechnung?","acceptedAnswer":{"@type":"Answer","text":"ZUGFeRD ab Version 2.0.1 zählt als E-Rechnung, außer den Profilen MINIMUM und BASIC-WL. Das Profil EN 16931 erfüllt die Anforderungen."}},
+{"@type":"Question","name":"Ist ZUGFeRD dasselbe wie Factur-X?","acceptedAnswer":{"@type":"Answer","text":"Ja. ZUGFeRD 2 und Factur-X sind technisch identisch: eine PDF/A-3-Datei mit eingebetteter XML im Format CII."}},
+{"@type":"Question","name":"Kann der Empfänger eine ZUGFeRD-Rechnung ohne Software lesen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die Datei ist eine normale PDF und lässt sich in jedem PDF-Programm öffnen. Buchhaltungssoftware liest zusätzlich die eingebettete XML aus."}}
+]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>ZUGFeRD-Rechnung aus Google Sheets erstellen</h1>
+<p class="lead">Eine ZUGFeRD-Rechnung ist eine normale PDF, in die die Rechnungsdaten als XML eingebettet sind. Ihr Kunde kann sie wie gewohnt lesen, seine Buchhaltungssoftware liest die Daten automatisch aus. Mit SheetFaktura erstellen Sie sie direkt aus Ihrer Google-Tabelle, zusammen mit einer XRechnung.</p>
+
+<h2>Welches ZUGFeRD-Profil zählt?</h2>
+<p>Nach den Fragen und Antworten des Bundesfinanzministeriums gilt ZUGFeRD ab Version 2.0.1 als E-Rechnung, außer den Profilen MINIMUM und BASIC-WL. Diese beiden enthalten zu wenige Angaben. SheetFaktura erstellt deshalb immer das Profil EN 16931 (früher COMFORT). Tragen Sie eine Leitweg-ID ein, entsteht die Datei im Profil XRECHNUNG, das Behörden erwarten.</p>
+<table>
+<tr><th>Profil</th><th>E-Rechnung im Sinne des Gesetzes?</th></tr>
+<tr><td>MINIMUM</td><td>nein</td></tr>
+<tr><td>BASIC-WL</td><td>nein</td></tr>
+<tr><td>BASIC</td><td>ja</td></tr>
+<tr><td>EN 16931 (COMFORT)</td><td>ja, von SheetFaktura erstellt</td></tr>
+<tr><td>EXTENDED</td><td>ja</td></tr>
+<tr><td>XRECHNUNG</td><td>ja, von SheetFaktura erstellt, wenn eine Leitweg-ID eingetragen ist</td></tr>
+</table>
+
+<h2>So geht es in Google Sheets</h2>
+<ol>
+<li>Im Menü <i>Erweiterungen</i> auf <i>SheetFaktura</i> und <i>Seitenleiste öffnen</i> klicken.</li>
+<li><i>Leere Vorlage anlegen</i> klicken und die gelben Felder ausfüllen.</li>
+<li><i>Prüfen</i> klicken und die angezeigten Hinweise beheben.</li>
+<li><i>E-Rechnung erstellen</i> klicken. Sie erhalten die ZUGFeRD-PDF und die XRechnung-XML.</li>
+</ol>
+<p>Die ausführliche Anleitung mit allen Pflichtangaben steht hier: <a href="xrechnung-google-sheets.html">XRechnung in Google Sheets erstellen</a>.</p>
+
+<img class="shot" src="img/sheetfaktura-tabelle.webp" width="1280" height="800" loading="lazy" alt="Rechnungsblatt mit Positionen in Google Sheets und der Seitenleiste von SheetFaktura">
+<p class="cap">Rechnungsblatt mit Positionen; rechts die Seitenleiste mit Prüfung und Erstellung.</p>
+
+<h2>Technische Details</h2>
+<ul>
+<li>PDF/A-3b mit eingebetteter XML in der CII-Syntax</li>
+<li>Profil EN 16931, mit Leitweg-ID Profil XRECHNUNG</li>
+<li>PDF auf Deutsch oder Englisch</li>
+<li>Vor jeder Veröffentlichung geprüft mit dem Validator Mustang (PDF/A und XML) und dem Prüfwerkzeug der KoSIT</li>
+</ul>
+
+<h2>Häufige Fragen</h2>
+<h3>Ist ZUGFeRD dasselbe wie Factur-X?</h3>
+<p>Ja. ZUGFeRD 2 und das französische Factur-X sind technisch identisch.</p>
+<h3>Kann mein Kunde die Rechnung ohne besondere Software lesen?</h3>
+<p>Ja. Die Datei ist eine normale PDF. Buchhaltungssoftware liest zusätzlich die eingebettete XML aus.</p>
+<h3>Wann muss ich E-Rechnungen ausstellen?</h3>
+<p>Ab 2027 bei mehr als 800.000 Euro Vorjahresumsatz, ab 2028 für alle Unternehmen. Kleinunternehmer und Kleinbetragsrechnungen bis 250 Euro sind ausgenommen. Mehr: <a href="e-rechnung-pflicht.html">E-Rechnungspflicht 2025 bis 2028</a>.</p>
+
+<p><a class="cta" href="index.html">Mehr über SheetFaktura</a></p>
+<p style="font-size:14px;color:var(--muted)">SheetFaktura prüft das Format Ihrer Rechnung; es ersetzt keine Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>

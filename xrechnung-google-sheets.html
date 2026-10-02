@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XRechnung in Google Sheets erstellen: Anleitung | SheetFaktura</title>
+<meta name="description" content="Schritt für Schritt: XRechnung 3.0 und ZUGFeRD-PDF direkt aus einer Google-Tabelle erstellen. Mit Prüfung aller Pflichtangaben, ohne neue Buchhaltungssoftware.">
+<link rel="canonical" href="https://sheetfaktura.de/xrechnung-google-sheets.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>.shot{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0 4px}.cap{font-size:14px;color:var(--muted);margin:0 0 18px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"XRechnung in Google Sheets erstellen",
+"description":"Eine XRechnung (XML) und eine ZUGFeRD-PDF mit dem Add-on SheetFaktura direkt aus einer Google-Tabelle erstellen.",
+"step":[
+{"@type":"HowToStep","name":"Add-on öffnen","text":"Tabelle öffnen, im Menü Erweiterungen auf SheetFaktura und dann auf Seitenleiste öffnen klicken."},
+{"@type":"HowToStep","name":"Vorlage anlegen","text":"In der Seitenleiste Leere Vorlage anlegen klicken. Es entsteht ein Rechnungsblatt mit gelben Eingabefeldern."},
+{"@type":"HowToStep","name":"Rechnung ausfüllen","text":"Rechnungsnummer, Datum, Käuferreferenz, Ihre Firma, Kunde und Positionen eintragen."},
+{"@type":"HowToStep","name":"Prüfen","text":"Prüfen klicken. Fehlende oder falsche Angaben werden auf Deutsch erklärt, ein Klick springt zur Zelle."},
+{"@type":"HowToStep","name":"E-Rechnung erstellen","text":"E-Rechnung erstellen klicken und die XRechnung (XML) und die ZUGFeRD-PDF speichern."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Brauche ich für eine XRechnung eine Leitweg-ID?","acceptedAnswer":{"@type":"Answer","text":"Nur bei Rechnungen an Behörden. Bei Firmen genügt als Käuferreferenz zum Beispiel die Bestellnummer, Kostenstelle oder der Name des Bestellers."}},
+{"@type":"Question","name":"Darf ich die XRechnung per E-Mail verschicken?","acceptedAnswer":{"@type":"Answer","text":"Ja, zwischen Unternehmen ist der Versand per E-Mail üblich. Behörden geben oft ein eigenes Portal vor, zum Beispiel die Plattform des Bundes."}},
+{"@type":"Question","name":"Was kostet SheetFaktura?","acceptedAnswer":{"@type":"Answer","text":"5 E-Rechnungen sind kostenlos. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer."}}
+]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>XRechnung in Google Sheets erstellen</h1>
+<p class="lead">Sie schreiben Ihre Rechnungen in Google Sheets und brauchen jetzt eine XRechnung oder eine ZUGFeRD-Datei? Mit dem Add-on SheetFaktura bleibt Ihre Tabelle das Werkzeug: Sie füllen ein Rechnungsblatt aus, das Add-on prüft die Pflichtangaben und erstellt beide Dateien in Ihrem Browser.</p>
+
+<img class="shot" src="img/sheetfaktura-ansicht.webp" width="1280" height="800" alt="Google Sheets mit Rechnungsblatt und der Seitenleiste von SheetFaktura">
+<p class="cap">Echte Ansicht: Beispielrechnung in Google Sheets, rechts die Seitenleiste von SheetFaktura.</p>
+
+<h2>Warum eine XRechnung?</h2>
+<p>Seit 2025 müssen alle Unternehmen in Deutschland E-Rechnungen empfangen können. Ab 2027 (über 800.000 Euro Vorjahresumsatz) beziehungsweise 2028 (alle) müssen Sie E-Rechnungen auch ausstellen. Behörden verlangen die XRechnung oft schon heute. Eine einfache PDF reicht dafür nicht. Details: <a href="e-rechnung-pflicht.html">E-Rechnungspflicht 2025 bis 2028</a>.</p>
+
+<h2>Schritt für Schritt</h2>
+<ol>
+<li><b>Add-on öffnen:</b> Tabelle öffnen, im Menü <i>Erweiterungen</i> auf <i>SheetFaktura</i> und dann auf <i>Seitenleiste öffnen</i> klicken.</li>
+<li><b>Vorlage anlegen:</b> <i>Leere Vorlage anlegen</i> klicken. Zum Ausprobieren legt <i>Beispiel anlegen</i> eine fertige Musterrechnung an.</li>
+<li><b>Rechnung ausfüllen:</b> Die gelben Felder ausfüllen. Pflichtfelder haben einen Stern. Für weitere Positionen Zeilen oberhalb von <i>Summe Positionen</i> einfügen.</li>
+<li><b>Prüfen:</b> <i>Prüfen</i> klicken. Fehlende oder falsche Angaben werden auf Deutsch erklärt, ein Klick auf die Zellbezeichnung springt zum Problem.</li>
+<li><b>E-Rechnung erstellen:</b> <i>E-Rechnung erstellen</i> klicken und die XRechnung (XML) und die ZUGFeRD-PDF speichern. Beide Dateien enthalten dieselbe Rechnung.</li>
+</ol>
+
+<img class="shot" src="img/sheetfaktura-pruefung.webp" width="1280" height="800" loading="lazy" alt="Prüfung der Pflichtfelder mit Hinweisen zu Käuferreferenz, IBAN und Menge">
+<p class="cap">Die Prüfung zeigt, was fehlt, zum Beispiel die Käuferreferenz oder eine ungültige IBAN.</p>
+
+<h2>Welche Angaben braucht eine XRechnung?</h2>
+<p>Neben den üblichen Rechnungsangaben verlangt die XRechnung einige Felder, die auf Papierrechnungen oft fehlen. Das Rechnungsblatt fragt alle ab:</p>
+<ul>
+<li>Rechnungsnummer, Rechnungsdatum und Leistungsdatum oder Leistungszeitraum</li>
+<li>Käuferreferenz: bei Behörden die Leitweg-ID, bei Firmen zum Beispiel die Bestellnummer</li>
+<li>Ihre Firma: Name, Anschrift, USt-IdNr. oder Steuernummer, Kontakt (Name, Telefon, E-Mail)</li>
+<li>Kunde: Name und Anschrift, bei innergemeinschaftlichen Lieferungen und Reverse Charge seine USt-IdNr.</li>
+<li>Positionen mit Menge, Einheit, Preis und Steuerart</li>
+<li>Zahlung: Fälligkeit und Bankverbindung (IBAN)</li>
+</ul>
+
+<h2>Was das Add-on erzeugt</h2>
+<ul>
+<li>XRechnung 3.0 in der CII-Syntax</li>
+<li>ZUGFeRD (Factur-X) als PDF/A-3 mit eingebetteter XML, Profil EN 16931; mit Leitweg-ID automatisch im Profil XRechnung. Mehr dazu: <a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a></li>
+<li>Steuersätze 19 % und 7 %, steuerfrei (zum Beispiel Kleinunternehmer), Reverse Charge, innergemeinschaftliche Lieferung, Ausfuhr</li>
+<li>Rabatte, Skonto, Anzahlungen und Rechnungskorrekturen</li>
+</ul>
+<p>Jede Version wird vor der Veröffentlichung mit dem Prüfwerkzeug der KoSIT für XRechnung und mit dem Validator Mustang für ZUGFeRD getestet.</p>
+
+<img class="shot" src="img/sheetfaktura-xrechnung-zugferd.webp" width="1280" height="800" loading="lazy" alt="ZUGFeRD-PDF und XRechnung-XML, beide als gültig geprüft">
+<p class="cap">Ergebnis: eine ZUGFeRD-PDF (PDF/A-3) und eine XRechnung-XML.</p>
+
+<h2>Ihre Daten bleiben bei Ihnen</h2>
+<p>Das Add-on liest nur die geöffnete Tabelle. Die Dateien entstehen in Ihrem Browser; Ihre Rechnungsdaten werden nicht an uns übertragen. Einzelheiten: <a href="datenschutz.html">Datenschutz</a>.</p>
+
+<h2>Häufige Fragen</h2>
+<h3>Brauche ich eine Leitweg-ID?</h3>
+<p>Nur bei Rechnungen an Behörden. Bei Firmen genügt als Käuferreferenz zum Beispiel die Bestellnummer, die Kostenstelle oder der Name des Bestellers.</p>
+<h3>Darf ich die XRechnung per E-Mail verschicken?</h3>
+<p>Ja, zwischen Unternehmen ist der Versand per E-Mail üblich. Behörden geben oft ein eigenes Eingangsportal vor.</p>
+<h3>XRechnung oder ZUGFeRD: was schicke ich?</h3>
+<p>Beide Dateien enthalten dieselbe Rechnung. Die XRechnung ist das reine Datenformat, das zum Beispiel Behörden verlangen. Die ZUGFeRD-PDF ist zusätzlich als normales Dokument lesbar. Welches Format Ihr Kunde annimmt, klären Sie mit ihm.</p>
+<h3>Was kostet das?</h3>
+<p>5 E-Rechnungen sind kostenlos. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer. XML und PDF ohne Aufpreis, keine Begrenzung der Anzahl.</p>
+
+<p><a class="cta" href="index.html">Mehr über SheetFaktura</a></p>
+<p style="font-size:14px;color:var(--muted)">SheetFaktura prüft das Format Ihrer Rechnung; es ersetzt keine Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>
