@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XRechnung aus Excel erstellen: Anleitung | SheetFaktura</title>
+<meta name="description" content="Rechnungen in Excel? So wird daraus eine XRechnung und eine ZUGFeRD-PDF: Datei in Google Sheets öffnen, Vorlage ausfüllen, prüfen lassen und erstellen.">
+<link rel="canonical" href="https://sheetfaktura.de/xrechnung-aus-excel.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>.shot{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0 4px}.cap{font-size:14px;color:var(--muted);margin:0 0 18px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"XRechnung aus Excel erstellen",
+"description":"Eine Rechnung aus einer Excel-Datei in Google Sheets übernehmen und mit dem Add-on SheetFaktura als XRechnung (XML) und ZUGFeRD-PDF erstellen.",
+"step":[
+{"@type":"HowToStep","name":"Excel-Datei importieren","text":"In Google Sheets eine neue Tabelle anlegen, im Menü Datei auf Importieren klicken, die Excel-Datei auswählen und die Importoption Neues Tabellenblatt einfügen wählen."},
+{"@type":"HowToStep","name":"Add-on öffnen","text":"Im Menü Erweiterungen auf SheetFaktura und dann auf Seitenleiste öffnen klicken."},
+{"@type":"HowToStep","name":"Vorlage anlegen","text":"Leere Vorlage anlegen klicken. Es entsteht ein Rechnungsblatt mit gelben Feldern."},
+{"@type":"HowToStep","name":"Daten übernehmen","text":"Die Werte aus dem Excel-Blatt in die gelben Felder kopieren und mit Nur Werte einfügen einfügen."},
+{"@type":"HowToStep","name":"Prüfen","text":"Prüfen klicken. Fehlende oder falsche Angaben werden auf Deutsch erklärt, ein Klick springt zur Zelle."},
+{"@type":"HowToStep","name":"E-Rechnung erstellen","text":"E-Rechnung erstellen klicken und die XRechnung (XML) und die ZUGFeRD-PDF speichern."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Funktioniert SheetFaktura direkt in Excel?","acceptedAnswer":{"@type":"Answer","text":"Nein. SheetFaktura ist ein Add-on für Google Sheets. Ihre Excel-Datei öffnen oder importieren Sie in Google Sheets und erstellen die E-Rechnung dort."}},
+{"@type":"Question","name":"Warum sehe ich SheetFaktura bei meiner Excel-Datei nicht?","acceptedAnswer":{"@type":"Answer","text":"Vermutlich ist die Datei noch im Office-Format geöffnet. Dann stehen Add-ons nicht zur Verfügung. Speichern Sie die Datei über Datei und Als Google Tabellen speichern im Google-Format."}},
+{"@type":"Question","name":"Kann ich auch CSV- oder LibreOffice-Dateien verwenden?","acceptedAnswer":{"@type":"Answer","text":"Ja. Google Sheets importiert neben Excel-Dateien unter anderem ODS, CSV und TSV."}},
+{"@type":"Question","name":"Was kostet SheetFaktura?","acceptedAnswer":{"@type":"Answer","text":"5 E-Rechnungen sind kostenlos. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer."}}
+]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>XRechnung aus Excel erstellen</h1>
+<p class="lead">Sie schreiben Ihre Rechnungen in Excel oder einem anderen Tabellenprogramm und brauchen jetzt eine XRechnung oder eine ZUGFeRD-Datei? Dafür müssen Sie nicht auf eine Buchhaltungssoftware umsteigen. Sie öffnen Ihre Excel-Datei in Google Sheets und erstellen die E-Rechnung dort mit dem Add-on SheetFaktura.</p>
+
+<div class="box"><b>Kurz gesagt</b>
+<ul>
+<li>SheetFaktura ist ein Add-on für Google Sheets. In Excel selbst läuft es nicht, aber Google Sheets öffnet Excel-Dateien.</li>
+<li>Sie übernehmen Ihre Rechnungsdaten in die Vorlage von SheetFaktura. Das Add-on prüft die Pflichtangaben und erstellt XRechnung (XML) und ZUGFeRD-PDF.</li>
+<li>Sie brauchen dafür ein Google-Konto. 5 E-Rechnungen sind kostenlos.</li>
+</ul></div>
+
+<h2>Warum die PDF aus Excel nicht mehr reicht</h2>
+<p>Eine Rechnung, die Sie in Excel schreiben und als PDF speichern, ist keine E-Rechnung im Sinne des Umsatzsteuergesetzes. Eine E-Rechnung wird in einem strukturierten elektronischen Format ausgestellt, übermittelt und empfangen, das eine elektronische Verarbeitung ermöglicht. Eine PDF ohne eingebettete Rechnungsdaten ist eine sonstige Rechnung.</p>
+<p>Für Rechnungen an andere Unternehmen im Inland sind Papier und PDF nur noch übergangsweise erlaubt. Für Umsätze aus 2025 und 2026 dürfen Sie bis Ende 2026 noch Papier oder, mit Zustimmung des Empfängers, eine PDF verwenden. Für Umsätze aus 2027 gilt das bis Ende 2027 nur, wenn Ihr Gesamtumsatz im Vorjahr nicht mehr als 800.000 Euro betrug. Danach ist die E-Rechnung Pflicht. Ausgenommen bleiben unter anderem Kleinunternehmer und Rechnungen bis 250 Euro. Alle Fristen: <a href="e-rechnung-pflicht.html">E-Rechnungspflicht 2025 bis 2028</a>. Der Bund verlangt E-Rechnungen von seinen Lieferanten schon seit 2020: <a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a>.</p>
+
+<h2>Was Sie brauchen</h2>
+<ul>
+<li>ein Google-Konto und Google Sheets im Browser (auf Deutsch heißt das Programm Google Tabellen)</li>
+<li>das Add-on SheetFaktura aus dem Google Workspace Marketplace</li>
+<li>Ihre Rechnungsdatei, zum Beispiel als XLSX, XLS oder XLSM; Google Sheets importiert auch ODS-Dateien aus LibreOffice sowie CSV-Dateien</li>
+</ul>
+<p>Die Datei darf nicht mit einem Passwort geschützt sein. Ihre ursprüngliche Excel-Datei auf dem Computer bleibt unverändert.</p>
+
+<h2>Schritt 1: Excel-Datei in Google Sheets öffnen</h2>
+<h3>Weg A: Importieren</h3>
+<ol>
+<li>In Google Sheets eine neue, leere Tabelle anlegen.</li>
+<li>Im Menü <i>Datei</i> auf <i>Importieren</i> klicken und die Excel-Datei auswählen oder hochladen.</li>
+<li>Als Importoption <i>Neues Tabellenblatt einfügen</i> wählen und auf <i>Importieren</i> klicken.</li>
+</ol>
+<p>Ihre Excel-Daten stehen dann als eigenes Tabellenblatt in der Google-Tabelle. In dieselbe Tabelle legen Sie gleich die Vorlage von SheetFaktura.</p>
+<h3>Weg B: Datei aus Google Drive öffnen und umwandeln</h3>
+<p>Laden Sie eine Excel-Datei in Google Drive hoch und öffnen sie, bearbeitet Google Sheets sie zunächst im Office-Format. Dabei stehen Apps Script und Google-Workspace-Add-ons nicht zur Verfügung, also auch SheetFaktura nicht. Wandeln Sie die Datei deshalb um: im Menü <i>Datei</i> auf <i>Als Google Tabellen speichern</i> klicken. In der umgewandelten Datei können Sie Add-ons wie SheetFaktura nutzen. Wer viele Dateien hochlädt, kann in den Einstellungen von Google Drive die Option <i>Hochgeladene Dateien in das Google-Dokumentenformat konvertieren</i> einschalten.</p>
+
+<h2>Schritt 2: Vorlage anlegen und Daten übernehmen</h2>
+<ol>
+<li>Im Menü <i>Erweiterungen</i> auf <i>SheetFaktura</i> und dann auf <i>Seitenleiste öffnen</i> klicken.</li>
+<li><i>Leere Vorlage anlegen</i> klicken. Es entsteht ein Rechnungsblatt mit gelben Feldern für Ihre Firma, den Kunden, die Positionen, die Steuerart und die Zahlung. Pflichtfelder haben einen Stern.</li>
+<li>Die Werte aus Ihrem Excel-Blatt in die gelben Felder kopieren. Zum Einfügen <i>Nur Werte einfügen</i> nutzen: Strg + Umschalt + V, auf dem Mac ⌘ + Umschalt + V. So bleibt die Formatierung der Vorlage erhalten.</li>
+<li>Für weitere Positionen Zeilen oberhalb von <i>Summe Positionen</i> einfügen.</li>
+</ol>
+<p>SheetFaktura arbeitet mit seinem eigenen Rechnungsblatt; ein beliebiges Excel-Layout liest es nicht. Deshalb kommen die Daten in die gelben Felder. Achten Sie dabei auf drei Punkte:</p>
+<ul>
+<li><b>Nettopreise:</b> In die Spalte <i>Einzelpreis netto</i> gehören Preise ohne Umsatzsteuer. Die Steuer berechnet das Add-on aus Steuerart und Steuersatz.</li>
+<li><b>Käuferreferenz:</b> Die XRechnung verlangt immer eine Käuferreferenz. Bei Firmen genügt zum Beispiel die Bestellnummer, die Kostenstelle oder der Name des Bestellers; bei Behörden ist es die Leitweg-ID.</li>
+<li><b>E-Mail für E-Rechnungen:</b> Ohne Leitweg-ID braucht die Rechnung eine elektronische Adresse des Kunden. Tragen Sie die E-Mail-Adresse ein, unter der Ihr Kunde E-Rechnungen empfängt.</li>
+</ul>
+
+<img class="shot" src="img/sheetfaktura-tabelle.webp" width="1280" height="800" loading="lazy" alt="Rechnungsblatt mit Positionen in Google Sheets und der Seitenleiste von SheetFaktura">
+<p class="cap">Das Rechnungsblatt von SheetFaktura: gelbe Felder für Kunde und Positionen, rechts die Seitenleiste.</p>
+
+<h2>Schritt 3: Prüfen und E-Rechnung erstellen</h2>
+<p>Klicken Sie in der Seitenleiste auf <i>Prüfen</i>. Fehlende oder falsche Angaben werden auf Deutsch erklärt; ein Klick auf die Zellbezeichnung springt zum Problem. Danach <i>E-Rechnung erstellen</i> klicken und beide Dateien speichern: die XRechnung 3.0 (XML) und die ZUGFeRD-PDF (PDF/A-3 mit eingebetteter XML, Profil EN 16931). Beide enthalten dieselbe Rechnung. Die Dateien entstehen in Ihrem Browser; Ihre Rechnungsdaten werden nicht an uns übertragen.</p>
+<p>Alle Felder erklärt die Anleitung <a href="xrechnung-google-sheets.html">XRechnung in Google Sheets erstellen</a>. Was die ZUGFeRD-PDF ist, steht unter <a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a>, Antworten auf häufige Fragen in der <a href="hilfe.html">Hilfe</a>.</p>
+
+<h2>Tipps für die nächsten Rechnungen</h2>
+<ul>
+<li>Für jede neue Rechnung das Rechnungsblatt duplizieren. Das Add-on verwendet das gerade geöffnete Rechnungsblatt.</li>
+<li>Ihre eigenen Angaben wie Firma und Bankverbindung stehen dann schon im Blatt; Sie passen vor allem Kunde, Rechnungsnummer, Datum und Positionen an.</li>
+<li>Welche Datei Ihr Kunde bekommt, klären Sie mit ihm: Die XRechnung ist das reine Datenformat, die ZUGFeRD-PDF ist zusätzlich als Dokument lesbar.</li>
+</ul>
+
+<h2>Häufige Fragen</h2>
+<h3>Funktioniert SheetFaktura direkt in Excel?</h3>
+<p>Nein. SheetFaktura ist ein Add-on für Google Sheets. Ihre Excel-Datei öffnen oder importieren Sie in Google Sheets und erstellen die E-Rechnung dort.</p>
+<h3>Warum sehe ich SheetFaktura bei meiner Excel-Datei nicht?</h3>
+<p>Vermutlich ist die Datei noch im Office-Format geöffnet. Dann stehen Add-ons nicht zur Verfügung. Speichern Sie die Datei über <i>Datei</i> und <i>Als Google Tabellen speichern</i> im Google-Format.</p>
+<h3>Kann ich auch CSV- oder LibreOffice-Dateien verwenden?</h3>
+<p>Ja. Google Sheets importiert neben Excel-Dateien unter anderem ODS, CSV und TSV.</p>
+<h3>Was kostet SheetFaktura?</h3>
+<p>5 E-Rechnungen sind kostenlos. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer. XML und PDF ohne Aufpreis, keine Begrenzung der Anzahl.</p>
+
+<p><a class="cta" href="https://workspace.google.com/marketplace/app/sheetfaktura_erechnung_xrechnung_und_zug/470804978149" rel="noopener">Im Google Workspace Marketplace installieren</a> &nbsp; <a href="index.html">Mehr über SheetFaktura</a></p>
+<p style="font-size:14px;color:var(--muted)">SheetFaktura prüft das Format Ihrer Rechnung; es ersetzt keine Steuerberatung.</p>
+
+<h2>Quellen</h2>
+<ul>
+<li>Google Docs-Editoren-Hilfe: <a href="https://support.google.com/docs/answer/40608?hl=de" rel="noopener">Datensätze und Tabellen importieren</a> und <a href="https://support.google.com/docs/answer/181110?hl=de" rel="noopener">Tastenkombinationen für Google Tabellen</a></li>
+<li>Google Drive-Hilfe: <a href="https://support.google.com/drive/answer/9276408?hl=de" rel="noopener">Office-Dateien in den Docs-Editoren bearbeiten</a></li>
+<li>Umsatzsteuergesetz: <a href="https://www.gesetze-im-internet.de/ustg_1980/__14.html" rel="noopener">§ 14 UStG</a> und <a href="https://www.gesetze-im-internet.de/ustg_1980/__27.html" rel="noopener">§ 27 UStG</a> (Absatz 38: Übergangsregeln); Ausnahmen: <a href="https://www.gesetze-im-internet.de/ustdv_1980/__33.html" rel="noopener">§ 33</a> und <a href="https://www.gesetze-im-internet.de/ustdv_1980/__34a.html" rel="noopener">§ 34a UStDV</a></li>
+</ul>
+<p>Stand der Zusammenfassung: Oktober 2026. Diese Seite ist keine Steuerberatung; im Einzelfall klären Sie Fragen bitte mit Ihrer Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rechnung an Behörden: XRechnung mit Leitweg-ID</title>
+<meta name="description" content="Rechnung an Behörden: wann die XRechnung Pflicht ist, wohin die Leitweg-ID gehört, wie Sie bei der OZG-RE einreichen und sie in Google Sheets erstellen.">
+<link rel="canonical" href="https://sheetfaktura.de/rechnung-an-behoerden-xrechnung.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<style>.shot{width:100%;height:auto;border:1px solid var(--line);border-radius:8px;margin:10px 0 4px}.cap{font-size:14px;color:var(--muted);margin:0 0 18px}</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"HowTo","name":"XRechnung mit Leitweg-ID in Google Sheets erstellen",
+"description":"Eine XRechnung mit Leitweg-ID für eine Behörde mit dem Add-on SheetFaktura direkt aus einer Google-Tabelle erstellen und einreichen.",
+"step":[
+{"@type":"HowToStep","name":"Leitweg-ID bereitlegen","text":"Die Leitweg-ID aus der Bestellung übernehmen oder beim Auftraggeber erfragen."},
+{"@type":"HowToStep","name":"Add-on öffnen","text":"Tabelle öffnen, im Menü Erweiterungen auf SheetFaktura und dann auf Seitenleiste öffnen klicken."},
+{"@type":"HowToStep","name":"Vorlage anlegen","text":"Leere Vorlage anlegen klicken. Es entsteht ein Rechnungsblatt mit gelben Eingabefeldern."},
+{"@type":"HowToStep","name":"Leitweg-ID eintragen","text":"Die Leitweg-ID genau wie erhalten, mit Bindestrichen, in das Feld Käuferreferenz oder Leitweg-ID eintragen."},
+{"@type":"HowToStep","name":"Rechnung ausfüllen","text":"Ihre Firma mit USt-IdNr. oder Steuernummer, Ansprechpartner, Telefon und E-Mail, dazu IBAN, Zahlungsbedingungen, Positionen und, falls vorhanden, die Bestellnummer des Kunden eintragen."},
+{"@type":"HowToStep","name":"Prüfen","text":"Prüfen klicken. Fehlende oder falsche Angaben werden auf Deutsch erklärt, ein Klick springt zur Zelle."},
+{"@type":"HowToStep","name":"E-Rechnung erstellen","text":"E-Rechnung erstellen klicken und die XRechnung (XML) und die ZUGFeRD-PDF speichern."},
+{"@type":"HowToStep","name":"Einreichen","text":"Die XML-Datei in der OZG-RE hochladen oder über den E-Mail-Kanal schicken; bei Ländern und Kommunen den Eingangsweg des Auftraggebers nutzen."}
+]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Brauche ich selbst eine Leitweg-ID?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Leitweg-ID gehört zu der Stelle, die Ihre Rechnung empfängt. Ihr Auftraggeber teilt sie Ihnen mit."}},
+{"@type":"Question","name":"Gilt die Pflicht zur E-Rechnung an den Bund auch für Kleinunternehmer?","acceptedAnswer":{"@type":"Answer","text":"Ja. Die E-Rechnungsverordnung des Bundes enthält keine Ausnahme für Kleinunternehmer. Ausnahmen hängen vom Auftrag ab, zum Beispiel beim Direktauftrag bis 1.000 Euro netto."}},
+{"@type":"Question","name":"Kann ich statt der XRechnung die ZUGFeRD-PDF schicken?","acceptedAnswer":{"@type":"Answer","text":"Der Bund nennt als Standard die XRechnung. Andere Formate sind möglich, wenn sie der europäischen Norm und den Nutzungsbedingungen der Plattform entsprechen; als Beispiel nennt der Bund ZUGFeRD ab Version 2.1.1 im Profil XRECHNUNG. Am einfachsten laden Sie die XML-Datei hoch."}},
+{"@type":"Question","name":"Was kostet SheetFaktura?","acceptedAnswer":{"@type":"Answer","text":"5 E-Rechnungen sind kostenlos. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer."}}
+]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>Rechnung an Behörden: XRechnung mit Leitweg-ID</h1>
+<p class="lead">Rechnungen an öffentliche Auftraggeber folgen eigenen Regeln: Der Bund verlangt seit November 2020 elektronische Rechnungen, und die Leitweg-ID leitet Ihre Rechnung zur richtigen Stelle. Hier steht, was gilt, wie Sie einreichen und wie Sie die XRechnung in Google Sheets erstellen.</p>
+
+<div class="box"><b>Kurz gesagt</b>
+<ul>
+<li>Bund: Seit dem 27. November 2020 müssen Lieferanten ihre Rechnungen an Auftraggeber der Bundesverwaltung elektronisch stellen. Ausgenommen sind zum Beispiel Direktaufträge bis 1.000 Euro netto.</li>
+<li>Länder und Kommunen: Jedes Land regelt die E-Rechnung selbst. Die XRechnung können Sie auch dort verwenden.</li>
+<li>Die Leitweg-ID bekommen Sie von Ihrem Auftraggeber. In der XRechnung steht sie als Käuferreferenz.</li>
+<li>Beim Bund reichen Sie die Rechnung über die Plattform OZG-RE ein, zum Beispiel per Upload, E-Mail oder Peppol.</li>
+</ul></div>
+
+<h2>Wann ist die XRechnung Pflicht?</h2>
+<p>Grundlage ist die EU-Richtlinie 2014/55/EU. Für den Bund setzen sie das E-Rechnungsgesetz und die E-Rechnungsverordnung (ERechV) um. Seit dem 27. November 2020 müssen Rechnungssteller ihre Rechnungen an Auftraggeber der Bundesverwaltung elektronisch ausstellen und übermitteln. Die Verordnung gilt für alle Unternehmer, unabhängig von der Größe; eine Ausnahme für Kleinunternehmer enthält sie nicht. Ausgenommen sind Rechnungen nach einem Direktauftrag bis 1.000 Euro netto sowie einige Sonderfälle, etwa bei geheimhaltungsbedürftigen Daten.</p>
+<p>Als Format nennt die Verordnung den Standard XRechnung. Andere Formate sind erlaubt, wenn sie der europäischen Norm für die elektronische Rechnungsstellung entsprechen. Eine einfache PDF ohne strukturierte Daten ist keine E-Rechnung. Aktuell gilt XRechnung in der Version 3.0; nach Angaben der KoSIT bleibt sie mindestens bis zum 31. Juli 2027 in Kraft. SheetFaktura erstellt XRechnung 3.0.</p>
+<p>Für Länder und Kommunen gilt die Verordnung des Bundes nicht. Die Bundesländer regeln den elektronischen Rechnungsaustausch eigenständig, auch ob Lieferanten E-Rechnungen schicken müssen. Die XRechnung ist laut Bund auch dort verwendbar. Fragen Sie im Zweifel Ihren Auftraggeber nach Format und Eingangsweg.</p>
+
+<h2>Was ist die Leitweg-ID?</h2>
+<p>Die Leitweg-ID adressiert die E-Rechnung an das Rechnungsbearbeitungssystem der zuständigen Stelle in der Verwaltung. Bund und Länder nutzen dafür ein einheitliches Format, die Spezifikation veröffentlicht die KoSIT. Eine Leitweg-ID hat drei Teile, getrennt durch Bindestriche:</p>
+<ul>
+<li><b>Grobadressierung:</b> 2 bis 12 Ziffern. Die ersten beiden stehen für das Bundesland, beim Bund lauten sie 99.</li>
+<li><b>Feinadressierung:</b> optional, bis zu 30 Buchstaben und Ziffern.</li>
+<li><b>Prüfziffer:</b> 2 Ziffern, berechnet nach demselben Verfahren wie bei der IBAN.</li>
+</ul>
+<p>Eine Leitweg-ID ist insgesamt 5 bis 46 Zeichen lang. Ein Beispiel aus der Spezifikation lautet 04011000-1234512345-06.</p>
+
+<h3>Woher bekomme ich die Leitweg-ID?</h3>
+<p>Von Ihrem Auftraggeber: Er teilt sie Ihnen bei der Bestellung mit. Liegt sie Ihnen nicht vor, fragen Sie dort nach. Bei Bundesbehörden können Sie die Leitweg-ID außerdem in der Plattform OZG-RE einsehen. Eine eigene Leitweg-ID brauchen Sie als Rechnungssteller nicht.</p>
+
+<h3>Wo steht sie in der XRechnung?</h3>
+<p>Im Feld Käuferreferenz (Buyer reference, BT-10). Für den Versand über Peppol dient sie außerdem als Adresse des Empfängers: Seine Peppol-ID besteht aus dem Präfix 0204 und der Leitweg-ID.</p>
+
+<h2>Welche Angaben verlangt der Bund?</h2>
+<p>Neben den umsatzsteuerlichen Pflichtangaben verlangt die E-Rechnungsverordnung mindestens die Leitweg-ID, die Bankverbindung, die Zahlungsbedingungen und eine E-Mail-Adresse des Rechnungsstellers. Hat Ihnen der Auftraggeber bei der Beauftragung eine Lieferantennummer oder eine Bestellnummer mitgeteilt, gehören auch diese auf die Rechnung. Im Rechnungsblatt von SheetFaktura gibt es Felder für die Leitweg-ID, die IBAN, die Zahlungsbedingungen, Ihre E-Mail-Adresse und die Bestellnummer des Kunden.</p>
+
+<h2>Wie reiche ich die Rechnung ein?</h2>
+<p>Seit September 2025 ist die OZG-RE die einzige Rechnungseingangsplattform des Bundes; die frühere Plattform ZRE ist abgeschaltet. Bevor Sie die OZG-RE nutzen, registrieren Sie sich einmal und erhalten ein Nutzerkonto. Alternativ ist die Anmeldung mit <i>Mein Unternehmenskonto</i> auf Basis von ELSTER möglich. Die Plattform bietet unter anderem diese Eingangswege:</p>
+<ul>
+<li><b>Upload:</b> Sie laden eine fertige E-Rechnung hoch, zum Beispiel die XRechnung aus SheetFaktura. Der Upload muss in der Plattform zuerst freigeschaltet werden.</li>
+<li><b>E-Mail:</b> Nach der Freischaltung erhalten Sie eine Adresse, an die Sie Ihre E-Rechnung schicken. Ihre Absenderadresse hinterlegen Sie vorher.</li>
+<li><b>Weberfassung:</b> Sie tippen die Rechnung in ein Webformular ein.</li>
+<li><b>Peppol:</b> Versand über das europäische Peppol-Netz. Dafür brauchen Sie einen Peppol-Dienstleister oder einen eigenen Zugangspunkt.</li>
+</ul>
+<p>Über Peppol sind laut KoSIT neben dem Bund grundsätzlich auch 15 Länder mit mehr als 8.000 Kommunen erreichbar (Stand April 2025). Wichtig: Die OZG-RE ist kein Archiv für Ihre Rechnungen, bewahren Sie die XRechnung selbst auf. SheetFaktura erstellt die Dateien; versenden oder über Peppol übermitteln Sie sie selbst.</p>
+
+<h2>Schritt für Schritt: XRechnung mit Leitweg-ID in Google Sheets</h2>
+<ol>
+<li><b>Leitweg-ID bereitlegen:</b> aus der Bestellung übernehmen oder beim Auftraggeber erfragen.</li>
+<li><b>Add-on öffnen:</b> Tabelle öffnen, im Menü <i>Erweiterungen</i> auf <i>SheetFaktura</i> und dann auf <i>Seitenleiste öffnen</i> klicken.</li>
+<li><b>Vorlage anlegen:</b> <i>Leere Vorlage anlegen</i> klicken. Es entsteht ein Rechnungsblatt mit gelben Eingabefeldern.</li>
+<li><b>Leitweg-ID eintragen:</b> in das Feld <i>Käuferreferenz oder Leitweg-ID</i>, genau wie erhalten, mit Bindestrichen. Das Add-on erkennt die Leitweg-ID und prüft die Prüfziffer. Das Feld <i>E-Mail für E-Rechnungen</i> beim Kunden brauchen Sie dann nicht.</li>
+<li><b>Rechnung ausfüllen:</b> Ihre Firma mit USt-IdNr. oder Steuernummer, Ansprechpartner, Telefon und E-Mail, dazu IBAN, Zahlungsbedingungen, Positionen und, falls vorhanden, die <i>Bestellnummer des Kunden</i>.</li>
+<li><b>Prüfen:</b> <i>Prüfen</i> klicken. Fehlende oder falsche Angaben werden auf Deutsch erklärt, ein Klick auf die Zellbezeichnung springt zum Problem.</li>
+<li><b>E-Rechnung erstellen:</b> <i>E-Rechnung erstellen</i> klicken und beide Dateien speichern: die XRechnung (XML) und die ZUGFeRD-PDF, die mit Leitweg-ID automatisch im Profil XRECHNUNG entsteht.</li>
+<li><b>Einreichen:</b> die XML-Datei in der OZG-RE hochladen oder über den E-Mail-Kanal schicken; bei Ländern und Kommunen den Eingangsweg Ihres Auftraggebers nutzen.</li>
+</ol>
+
+<img class="shot" src="img/sheetfaktura-pruefung.webp" width="1280" height="800" loading="lazy" alt="Prüfung der Pflichtfelder mit Hinweisen zu Käuferreferenz, IBAN und Menge">
+<p class="cap">Die Prüfung zeigt, was fehlt, zum Beispiel die Käuferreferenz oder Leitweg-ID.</p>
+
+<p>Jede Version wird vor der Veröffentlichung mit dem Prüfwerkzeug der KoSIT getestet. Alle Felder erklärt die <a href="xrechnung-google-sheets.html">Anleitung</a>, das Profil XRECHNUNG die Seite <a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a>.</p>
+
+<h2>Häufige Fragen</h2>
+<h3>Brauche ich selbst eine Leitweg-ID?</h3>
+<p>Nein. Die Leitweg-ID gehört zu der Stelle, die Ihre Rechnung empfängt. Ihr Auftraggeber teilt sie Ihnen mit.</p>
+<h3>Gilt die Pflicht auch für Kleinunternehmer?</h3>
+<p>Bei Rechnungen an Auftraggeber der Bundesverwaltung ja: Die E-Rechnungsverordnung enthält keine Ausnahme für Kleinunternehmer. Ausnahmen hängen vom Auftrag ab, zum Beispiel beim Direktauftrag bis 1.000 Euro netto. Mehr dazu: <a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a>.</p>
+<h3>Kann ich statt der XRechnung die ZUGFeRD-PDF schicken?</h3>
+<p>Der Bund nennt als Standard die XRechnung. Andere Formate sind möglich, wenn sie der europäischen Norm und den Nutzungsbedingungen der Plattform entsprechen; als Beispiel nennt der Bund ZUGFeRD ab Version 2.1.1 im Profil XRECHNUNG. Am einfachsten laden Sie die XML-Datei hoch.</p>
+<h3>Was kostet SheetFaktura?</h3>
+<p>5 E-Rechnungen sind kostenlos. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer.</p>
+
+<p><a class="cta" href="https://workspace.google.com/marketplace/app/sheetfaktura_erechnung_xrechnung_und_zug/470804978149" rel="noopener">Im Google Workspace Marketplace installieren</a> &nbsp; <a href="index.html">Mehr über SheetFaktura</a></p>
+<p style="font-size:14px;color:var(--muted)">SheetFaktura prüft das Format Ihrer Rechnung; es ersetzt keine Steuerberatung.</p>
+
+<h2>Quellen</h2>
+<ul>
+<li>E-Rechnungsverordnung des Bundes (ERechV): <a href="https://www.gesetze-im-internet.de/erechv/" rel="noopener">gesetze-im-internet.de</a></li>
+<li>E-Rechnung Bund: <a href="https://e-rechnung-bund.de/app/uploads/2025/09/Broschuere-fuer-Rechnungssteller_092025.pdf" rel="noopener">Broschüre für Rechnungssteller</a>, <a href="https://e-rechnung-bund.de/app/uploads/2025/09/Flyer-Lieferanteninformation_092025.pdf" rel="noopener">Lieferanteninformation</a>, <a href="https://e-rechnung-bund.de/app/uploads/2025/09/Leitfaden-Uebertragungskanal-Peppol_092025.pdf" rel="noopener">Leitfaden zum Eingangskanal Peppol</a> und <a href="https://e-rechnung-bund.de/en/e-invoicing/e-invoicing-from-a-z/" rel="noopener">Glossar (englisch)</a></li>
+<li>KoSIT: <a href="https://xeinkauf.de/app/uploads/2022/11/Leitweg-ID-Formatspezifikation-v2-0-2-1.pdf" rel="noopener">Formatspezifikation Leitweg-ID, Version 2.0.2</a>, <a href="https://xeinkauf.de/xrechnung/versionen-und-bundles/" rel="noopener">XRechnung: Versionen und Bundles</a>, <a href="https://xeinkauf.de/peppol/" rel="noopener">Peppol</a></li>
+</ul>
+<p>Stand der Zusammenfassung: Oktober 2026. Diese Seite ist keine Steuerberatung; im Einzelfall klären Sie Fragen bitte mit Ihrer Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>
