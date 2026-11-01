@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-eval'; style-src 'self'; img-src 'self'; connect-src 'self' https://api.polar.sh; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>E-Rechnung aus Excel erstellen: XRechnung und ZUGFeRD im Browser | SheetFaktura</title>
+<meta name="description" content="Excel-Rechnung in XRechnung und ZUGFeRD umwandeln: Vorlage ausfüllen, Datei auswählen, beide Dateien entstehen in Ihrem Browser. Ohne Upload, ohne Google-Konto. 5 E-Rechnungen kostenlos.">
+<link rel="canonical" href="https://sheetfaktura.de/excel.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/excel.c5f7085419.css" integrity="sha384-ButvRbwkGVwoYU1Lj2l8sgNKv9UkN2jcOSYr0tAvQqFoN5pOcjgoR+pJ6j02Q2cV">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SheetFaktura für Excel","applicationCategory":"BusinessApplication","operatingSystem":"Web (Browser)","url":"https://sheetfaktura.de/excel.html","inLanguage":["de","en"],
+"description":"Werkzeug im Browser, das aus der ausgefüllten Excel-Vorlage von SheetFaktura eine XRechnung 3.0 (XML) und eine ZUGFeRD-PDF (PDF/A-3, Profil EN 16931) erstellt. Die Datei wird nicht hochgeladen. 5 E-Rechnungen kostenlos.",
+"offers":[{"@type":"Offer","name":"Monatlich","price":"7.90","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"7.90","priceCurrency":"EUR","valueAddedTaxIncluded":false,"billingDuration":"P1M"}},{"@type":"Offer","name":"Jährlich","price":"69.00","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"69.00","priceCurrency":"EUR","valueAddedTaxIncluded":false,"billingDuration":"P1Y"}}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Werden meine Daten hochgeladen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Ihre Excel-Datei wird nur in Ihrem Browser gelesen, auch XRechnung und PDF entstehen dort. Es wird nichts an uns übertragen. Nur wenn Sie einen Lizenzschlüssel eingeben, prüft Ihr Browser den Schlüssel bei unserem Zahlungsanbieter Polar. Mehr dazu in der Datenschutzerklärung."}},{"@type":"Question","name":"Welche Excel-Versionen funktionieren?","acceptedAnswer":{"@type":"Answer","text":"Jede Version, die Dateien im Format .xlsx speichert: Excel 2007 und neuer, Microsoft 365, Excel für Mac und Excel im Browser. Eine ältere .xls-Datei speichern Sie mit Speichern unter als Excel-Arbeitsmappe (.xlsx). Die Datei darf nicht mit einem Kennwort geschützt sein."}},{"@type":"Question","name":"Funktioniert es mit LibreOffice oder Numbers?","acceptedAnswer":{"@type":"Answer","text":"Ja, wenn Sie die Datei als .xlsx speichern. In LibreOffice Calc: Datei, Speichern unter, Dateityp Excel 2007-365 (.xlsx). In Numbers: Ablage, Exportieren, Excel."}},{"@type":"Question","name":"Kann ich eine vorhandene PDF-Rechnung umwandeln?","acceptedAnswer":{"@type":"Answer","text":"Nein. Eine PDF lässt sich nicht direkt in eine E-Rechnung umwandeln, weil ihr die strukturierten Rechnungsdaten fehlen. Sie tragen die Angaben einmal in die Excel-Vorlage ein und erhalten daraus beide Dateien: die XRechnung und die ZUGFeRD-PDF."}},{"@type":"Question","name":"Kann ich meine bisherige Excel-Rechnung verwenden?","acceptedAnswer":{"@type":"Answer","text":"SheetFaktura liest nur seine eigene Vorlage, kein beliebiges Layout. Übertragen Sie Ihre Angaben einmal in die gelben Felder. Für die nächsten Rechnungen kopieren Sie das Blatt und ändern nur Kunde, Nummer, Datum und Positionen."}},{"@type":"Question","name":"Brauche ich als Kleinunternehmer eine E-Rechnung?","acceptedAnswer":{"@type":"Answer","text":"Kleinunternehmer nach § 19 UStG müssen keine E-Rechnungen ausstellen, sie müssen E-Rechnungen aber empfangen können. Möchte ein Kunde trotzdem eine XRechnung, wählen Sie in der Vorlage die Steuerart E Steuerfrei und tragen als Grund der Steuerbefreiung zum Beispiel „Kein Ausweis der Umsatzsteuer, da Kleinunternehmer gemäß § 19 UStG“ ein. Mehr dazu: E-Rechnung für Kleinunternehmer."}},{"@type":"Question","name":"Was kostet es?","acceptedAnswer":{"@type":"Answer","text":"5 E-Rechnungen sind kostenlos, gezählt in Ihrem Browser. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer. Ein Lizenzschlüssel gilt hier und im Add-on für Google Sheets. XML und PDF ohne Aufpreis, keine Begrenzung der Anzahl."}},{"@type":"Question","name":"Was mache ich bei einer Fehlermeldung?","acceptedAnswer":{"@type":"Answer","text":"Jeder Hinweis nennt die Zelle, zum Beispiel Zelle C6. Korrigieren Sie die Angabe in Excel, speichern Sie die Datei und wählen Sie sie hier erneut aus."}}]}
+</script>
+<script src="assets/lib/fflate-0.8.3.umd.js" integrity="sha384-ETfVLWAUsU3zp3SpnQsPDbAyrF6jYv2w8aNYo6KtY2JuyxXhzYLOL7e0ATbLSIHP" defer></script>
+<script src="assets/excel-app.9818d90abd.js" integrity="sha384-EfjfTRgWRrY1ifnCpv88/9wQkkJu1dl7/1kSXE6uLZylns/Db8PkToTgm/5k/l0A" defer></script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html" data-i18n="navStart" data-href-en="index.html#english">Start</a><a href="xrechnung-aus-excel.html" data-i18n="navGuide">Anleitung</a><a href="hilfe.html" data-i18n="navHelp" data-href-en="help.html">Hilfe</a><a href="datenschutz.html" data-i18n="navPrivacy" data-href-en="privacy.html">Datenschutz</a><a href="agb.html" data-i18n="navTerms" data-href-en="terms.html">AGB</a><a href="impressum.html" data-i18n="navImprint">Impressum</a></nav></div></header>
+<main><div class="wrap">
+<div class="sf-lang" role="group" aria-label="Sprache / Language"><button type="button" data-lang="de" aria-pressed="true">Deutsch</button><button type="button" data-lang="en" aria-pressed="false">English</button></div>
+
+<h1 data-i18n="h1">E-Rechnung aus Excel erstellen</h1>
+<p class="lead" data-i18n="lead">Sie schreiben Ihre Rechnungen in Excel? Mit der kostenlosen Vorlage von SheetFaktura wandeln Sie Ihre Excel-Rechnung in eine XRechnung (XML) und eine ZUGFeRD-PDF um. Die Datei wird nur in Ihrem Browser gelesen und nicht hochgeladen. Ein Google-Konto brauchen Sie dafür nicht.</p>
+
+<div class="grid sf-steps">
+<div class="box" id="vorlage"><b data-i18n="s1t">1. Vorlage herunterladen</b>
+<p class="sf-dl"><a class="sf-btn" id="sf-dl-template" href="downloads/SheetFaktura-E-Rechnung-Vorlage.xlsx" download data-i18n="dlEmpty">Leere Vorlage</a><a class="sf-btn sf-secondary" id="sf-dl-example" href="downloads/SheetFaktura-Beispielrechnung.xlsx" download data-i18n="dlExample">Beispielrechnung</a></p>
+<span class="sf-small" data-i18n="s1">Excel-Dateien (.xlsx) mit 14 und 15 KB.</span></div>
+<div class="box"><b data-i18n="s2t">2. In Excel ausfüllen</b><span data-i18n="s2">Gelbe Felder ausfüllen und die Datei als .xlsx speichern. Das geht auch mit LibreOffice und Numbers.</span></div>
+<div class="box"><b data-i18n="s3t">3. Datei hier auswählen</b><span data-i18n="s3">SheetFaktura prüft die Angaben, nennt jedes Problem mit der Zelle und erstellt XRechnung und ZUGFeRD-PDF.</span></div>
+</div>
+
+<section class="sf-tool" id="werkzeug" aria-labelledby="sf-tool-title">
+<h2 id="sf-tool-title" data-i18n="toolTitle">Excel-Rechnung in XRechnung und ZUGFeRD umwandeln</h2>
+<noscript><p class="sf-notice error">Für dieses Werkzeug muss JavaScript eingeschaltet sein. / This tool needs JavaScript.</p></noscript>
+<div id="sf-notice" class="sf-notice" role="alert" hidden></div>
+<div class="sf-drop" id="sf-drop">
+<p class="sf-drop-title" id="sf-drop-title">Excel-Datei hierher ziehen</p>
+<p class="sf-drop-or" id="sf-drop-or">oder</p>
+<button type="button" class="sf-btn" id="sf-pick">Datei auswählen</button>
+<input type="file" id="sf-file" class="sf-visually-hidden" tabindex="-1" aria-hidden="true" accept=".xlsx,.xlsm,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12">
+<p class="sf-small" id="sf-drop-hint">Nur .xlsx, höchstens 5 MB. Die Datei bleibt auf Ihrem Gerät.</p>
+</div>
+<div id="sf-file-info" class="sf-file-info"></div>
+<div id="sf-check" aria-live="polite"></div>
+<div id="sf-create-box" class="sf-create" hidden>
+<p class="sf-pdflang"><span id="sf-pdflang-label">Sprache der PDF:</span> <label><input type="radio" name="sf-pdflang" value="de" checked> Deutsch</label> <label><input type="radio" name="sf-pdflang" value="en"> English</label></p>
+<button type="button" class="sf-btn sf-big" id="sf-create">E-Rechnung erstellen</button>
+<div id="sf-result" aria-live="polite"></div>
+</div>
+<p class="sf-small" data-i18n="privacyNote">Ihre Datei wird nur in Ihrem Browser gelesen. Dort entstehen auch XRechnung und PDF, es wird nichts hochgeladen. Die Prüfung betrifft das Format und ist keine Steuerberatung.</p>
+<div class="sf-licence" id="sf-licence-box"><h3 id="sf-lic-title">Lizenz</h3><div id="sf-licence"><p class="sf-small">Wird geladen ...</p></div></div>
+</section>
+
+<h2 data-i18n="tipsTitle">Gut zu wissen</h2>
+<ul>
+<li data-i18n="tip1">Excel öffnet Dateien aus dem Internet zuerst in der geschützten Ansicht. Klicken Sie dort auf <i>Bearbeitung aktivieren</i>, um die Vorlage auszufüllen.</li>
+<li data-i18n="tip2">Für jede neue Rechnung kopieren Sie am besten das ausgefüllte Blatt (Rechtsklick auf den Blattnamen, <i>Verschieben oder kopieren</i>, <i>Kopie erstellen</i>) und ändern Kunde, Rechnungsnummer, Datum und Positionen. Hat die Datei mehrere Rechnungsblätter, wählen Sie hier das richtige aus.</li>
+<li data-i18n="tip3">Für weitere Positionen fügen Sie Zeilen oberhalb von <i>Summe Positionen</i> ein und kopieren die Formel der Spalte <i>Netto</i> aus der Zeile darüber.</li>
+<li data-i18n="tip4">Die Käuferreferenz ist Pflicht: bei Behörden die Leitweg-ID, bei Firmen zum Beispiel die Bestellnummer. Ohne Leitweg-ID braucht die Rechnung die E-Mail-Adresse, unter der Ihr Kunde E-Rechnungen empfängt.</li>
+<li data-i18n="tip5">Welche Datei Ihr Kunde bekommt, klären Sie mit ihm: Die XRechnung ist das reine Datenformat, die ZUGFeRD-PDF ist zusätzlich als Dokument lesbar. Beide enthalten dieselbe Rechnung.</li>
+</ul>
+
+<h2 data-i18n="faqTitle">Häufige Fragen</h2>
+<h3 data-i18n="faqUploadQ">Werden meine Daten hochgeladen?</h3>
+<p data-i18n="faqUploadA">Nein. Ihre Excel-Datei wird nur in Ihrem Browser gelesen, auch XRechnung und PDF entstehen dort. Es wird nichts an uns übertragen. Nur wenn Sie einen Lizenzschlüssel eingeben, prüft Ihr Browser den Schlüssel bei unserem Zahlungsanbieter Polar. Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+<h3 data-i18n="faqVersionsQ">Welche Excel-Versionen funktionieren?</h3>
+<p data-i18n="faqVersionsA">Jede Version, die Dateien im Format .xlsx speichert: Excel 2007 und neuer, Microsoft 365, Excel für Mac und Excel im Browser. Eine ältere .xls-Datei speichern Sie mit <i>Speichern unter</i> als <i>Excel-Arbeitsmappe (.xlsx)</i>. Die Datei darf nicht mit einem Kennwort geschützt sein.</p>
+<h3 data-i18n="faqLibreQ">Funktioniert es mit LibreOffice oder Numbers?</h3>
+<p data-i18n="faqLibreA">Ja, wenn Sie die Datei als .xlsx speichern. In LibreOffice Calc: <i>Datei</i>, <i>Speichern unter</i>, Dateityp <i>Excel 2007-365 (.xlsx)</i>. In Numbers: <i>Ablage</i>, <i>Exportieren</i>, <i>Excel</i>.</p>
+<h3 data-i18n="faqPdfQ">Kann ich eine vorhandene PDF-Rechnung umwandeln?</h3>
+<p data-i18n="faqPdfA">Nein. Eine PDF lässt sich nicht direkt in eine E-Rechnung umwandeln, weil ihr die strukturierten Rechnungsdaten fehlen. Sie tragen die Angaben einmal in die Excel-Vorlage ein und erhalten daraus beide Dateien: die XRechnung und die ZUGFeRD-PDF.</p>
+<h3 data-i18n="faqLayoutQ">Kann ich meine bisherige Excel-Rechnung verwenden?</h3>
+<p data-i18n="faqLayoutA">SheetFaktura liest nur seine eigene Vorlage, kein beliebiges Layout. Übertragen Sie Ihre Angaben einmal in die gelben Felder. Für die nächsten Rechnungen kopieren Sie das Blatt und ändern nur Kunde, Nummer, Datum und Positionen.</p>
+<h3 data-i18n="faqSmallQ">Brauche ich als Kleinunternehmer eine E-Rechnung?</h3>
+<p data-i18n="faqSmallA">Kleinunternehmer nach § 19 UStG müssen keine E-Rechnungen ausstellen, sie müssen E-Rechnungen aber empfangen können. Möchte ein Kunde trotzdem eine XRechnung, wählen Sie in der Vorlage die Steuerart <i>E Steuerfrei</i> und tragen als Grund der Steuerbefreiung zum Beispiel „Kein Ausweis der Umsatzsteuer, da Kleinunternehmer gemäß § 19 UStG“ ein. Mehr dazu: <a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a>.</p>
+<h3 data-i18n="faqPriceQ">Was kostet es?</h3>
+<p data-i18n="faqPriceA">5 E-Rechnungen sind kostenlos, gezählt in Ihrem Browser. Danach 7,90 Euro im Monat, monatlich kündbar, oder 69 Euro im Jahr, jeweils zuzüglich Umsatzsteuer. Ein Lizenzschlüssel gilt hier und im Add-on für Google Sheets. XML und PDF ohne Aufpreis, keine Begrenzung der Anzahl.</p>
+<h3 data-i18n="faqErrorsQ">Was mache ich bei einer Fehlermeldung?</h3>
+<p data-i18n="faqErrorsA">Jeder Hinweis nennt die Zelle, zum Beispiel <i>Zelle C6</i>. Korrigieren Sie die Angabe in Excel, speichern Sie die Datei und wählen Sie sie hier erneut aus.</p>
+
+<h2 data-i18n="sheetsTitle">Lieber in Google Sheets?</h2>
+<p data-i18n="sheetsText">SheetFaktura gibt es auch als <a href="index.html">Add-on für Google Sheets</a> mit derselben Vorlage und denselben Prüfungen. Beide Wege erklärt die Anleitung <a href="xrechnung-aus-excel.html">XRechnung aus Excel erstellen</a>. Was wann Pflicht ist, steht unter <a href="e-rechnung-pflicht.html">E-Rechnungspflicht 2025 bis 2028</a>.</p>
+<p class="sf-small" data-i18n="disclaimer">SheetFaktura prüft das Format Ihrer Rechnung; es ersetzt keine Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="excel.html">SheetFaktura für Excel</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="privacy.html">Privacy</a><a href="agb.html">AGB</a><a href="terms.html">Terms</a><a href="hilfe.html">Hilfe</a><a href="help.html">Help</a></div></footer>
+</body>
+</html>

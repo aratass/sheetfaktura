@@ -14,7 +14,7 @@
 <p style="font-size:14px"><a href="datenschutz.html">Deutsche Fassung</a></p>
 
 <h1>Privacy policy</h1>
-<p>Last updated: 2 October 2026</p>
+<p>Last updated: 1 November 2026</p>
 <h2>1. Controller</h2>
 <p>Arminas Attas<br>Vėtrungių g. 73-71<br>LT-06327 Vilnius<br>Lithuania<br>Email: <a href="mailto:zemishyrius@gmail.com">zemishyrius@gmail.com</a></p>
 <h2>2. In short</h2>
@@ -22,6 +22,7 @@
 <li>The add-on reads only the spreadsheet in which you open it, and only when you use it.</li>
 <li>The invoice files are made in your browser. Your invoice data is not sent to us. We run no server of our own for the add-on.</li>
 <li>To check a licence, your licence key is sent to our payment provider Polar.</li>
+<li>The tool SheetFaktura for Excel on this website reads your Excel file only in your browser. The file and your invoice data are not uploaded.</li>
 </ul>
 <h2>3. What is processed and why</h2>
 <h3>3.1 Content of the open spreadsheet</h3>
@@ -39,6 +40,14 @@
 <p>If an error occurs in the add-on, a technical error message is stored in the log of our Google Cloud project (Google Cloud Logging) so we can fix it. We do not deliberately include invoice content, but error messages can in rare cases contain fragments of input. Logs are deleted after 30 days. Legal basis: Art. 6(1)(f) GDPR (operation and troubleshooting).</p>
 <h3>3.7 Contact by email</h3>
 <p>If you write to us, we process your message and contact details to answer. Legal basis: Art. 6(1)(b) or (f) GDPR. We delete messages when they are no longer needed, at the latest when legal retention periods end.</p>
+<h3>3.8 The tool "SheetFaktura for Excel" on sheetfaktura.de</h3>
+<p>On the page <a href="excel.html?lang=en">sheetfaktura.de/excel.html</a> you can turn a filled SheetFaktura Excel template into an XRechnung and a ZUGFeRD PDF. The following applies:</p>
+<ul>
+<li><b>Processing in the browser:</b> The file you pick is read and checked only in your browser. The XRechnung and the PDF are made there too, and you save them yourself. The file and its content are not uploaded and not sent to us. The program parts of the tool, including the libraries @e-invoice-eu/core, pdf-lib, fontkit and fflate, are loaded from sheetfaktura.de, not from jsDelivr.</li>
+<li><b>Storage in your browser:</b> The tool stores in your browser's local storage (localStorage) for sheetfaktura.de: how many free e-invoices were created in this browser, your licence key if you enter one, the result and time of the last licence check, and the chosen language. This data stays on your device; we cannot see it. You remove the licence key in the tool with "Remove key", and all of this data by deleting the site data of sheetfaktura.de in your browser. This storage is needed for the function you use (section 25(2) no. 2 of the German TDDDG). Legal basis of the processing: Art. 6(1)(b) GDPR.</li>
+<li><b>Licence check with Polar:</b> When you enter a licence key, and after that at most once a day when you open the tool or create an e-invoice, your browser sends the licence key and our merchant identifier to Polar's interface (api.polar.sh). Polar answers whether the key is valid. Polar technically sees your IP address. Legal basis: Art. 6(1)(b) GDPR.</li>
+<li><b>No cookies, no analytics:</b> The tool sets no cookies, uses no analytics or tracking services and sends no error logs.</li>
+</ul>
 <h2>4. Google</h2>
 <p>The add-on runs on Google's platform (Google Workspace, Apps Script). Google's terms and privacy policy apply to Google's processing. The use of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements. We do not sell data, do not use it for advertising and do not share it with third parties except as described above.</p>
 <h2>5. Your rights</h2>
@@ -47,6 +56,6 @@
 <p>If the add-on changes, we update this policy. The version published here applies.</p>
 
 </div></main>
-<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="privacy.html">Privacy</a><a href="agb.html">AGB</a><a href="terms.html">Terms</a><a href="hilfe.html">Hilfe</a><a href="help.html">Help</a></div></footer>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="excel.html">SheetFaktura für Excel</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="privacy.html">Privacy</a><a href="agb.html">AGB</a><a href="terms.html">Terms</a><a href="hilfe.html">Hilfe</a><a href="help.html">Help</a></div></footer>
 </body>
 </html>
