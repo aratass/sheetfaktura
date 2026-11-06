@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E-Rechnung Beispiele: XRechnung und ZUGFeRD zum Download | SheetFaktura</title>
+<meta name="description" content="5 geprüfte E-Rechnung-Beispiele kostenlos zum Download: XRechnung (XML) und ZUGFeRD-PDF für Standardrechnung, mehrere Steuersätze, Reverse Charge, Behörde mit Leitweg-ID und Kleinunternehmer.">
+<link rel="canonical" href="https://sheetfaktura.de/e-rechnung-beispiele.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SheetFaktura">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://sheetfaktura.de/e-rechnung-beispiele.html">
+<meta property="og:title" content="E-Rechnung Beispiele: XRechnung und ZUGFeRD zum Download">
+<meta property="og:description" content="5 geprüfte Muster-E-Rechnungen als XRechnung (XML) und ZUGFeRD-PDF: Standard, mehrere Steuersätze, Reverse Charge, Behörde mit Leitweg-ID, Kleinunternehmer.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Was ist der Unterschied zwischen XRechnung und ZUGFeRD?","acceptedAnswer":{"@type":"Answer","text":"Die XRechnung ist eine reine XML-Datei ohne Ansicht. ZUGFeRD ist eine PDF-Datei im Format PDF/A-3, in der die Rechnungsdaten als XML eingebettet sind; Menschen lesen die PDF, Programme die XML. Beide zählen als E-Rechnung, ZUGFeRD ab dem Profil EN 16931."}},
+{"@type":"Question","name":"Darf ich die Beispiele verwenden?","acceptedAnswer":{"@type":"Answer","text":"Ja, zum Ansehen, Testen und als Muster für Ihre eigenen Rechnungen. Alle Firmen, Personen, Nummern und Bankdaten in den Beispielen sind erfunden."}},
+{"@type":"Question","name":"Sind die Beispiele geprüft?","acceptedAnswer":{"@type":"Answer","text":"Ja. Alle XML-Dateien hat das Prüfwerkzeug der KoSIT (Validator 1.6.3 mit der Konfiguration für XRechnung 3.0.2) als XRechnung akzeptiert. Die PDF-Dateien sind laut Mustang 2.26.0 gültige PDF/A-3b-Dateien mit gültiger eingebetteter XML."}},
+{"@type":"Question","name":"Wie öffne ich eine XRechnung?","acceptedAnswer":{"@type":"Answer","text":"Eine XML-Datei können Sie mit jedem Browser oder Texteditor öffnen, dann sehen Sie die Daten als Code. Lesbar wird sie mit einem E-Rechnungs-Viewer. Die ZUGFeRD-PDF öffnet jedes PDF-Programm; die XML steckt als Anhang in der Datei."}},
+{"@type":"Question","name":"Wie erstelle ich aus einem Beispiel meine eigene E-Rechnung?","acceptedAnswer":{"@type":"Answer","text":"Laden Sie die Standardrechnung als Excel-Vorlage herunter, tragen Sie Ihre Daten ein und wandeln Sie die Datei mit SheetFaktura für Excel im Browser um. Oder legen Sie in Google Sheets mit dem Add-on SheetFaktura eine Vorlage an."}}
+]}
+</script>
+<style>
+.ex h3 { margin-top: 4px; }
+.ex ul { margin: 6px 0; padding-left: 20px; }
+.ex .dl a { display: inline-block; margin: 4px 14px 4px 0; font-weight: 600; }
+.ex .meta { font-size: 14px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>E-Rechnung Beispiele: XRechnung und ZUGFeRD zum Download</h1>
+<p class="lead">Wie sieht eine E-Rechnung wirklich aus? Hier finden Sie fünf vollständige Beispiele, jeweils als XRechnung (XML) und als ZUGFeRD-PDF mit eingebetteter XML. Alle Dateien sind mit den offiziellen Prüfwerkzeugen geprüft. Firmen, Personen und Nummern sind frei erfunden.</p>
+
+<div class="box"><b>Kurz gesagt</b>
+<ul>
+<li>Die <b>XRechnung</b> ist eine reine XML-Datei. Hier in der CII-Syntax, Version 3.0.</li>
+<li>Die <b>ZUGFeRD-PDF</b> ist eine PDF/A-3-Datei: vorne die Rechnung zum Lesen, eingebettet dieselben Daten als XML. Profil EN 16931, bei der Behörden-Rechnung Profil XRechnung.</li>
+<li>Geprüft am 5. November 2026: KoSIT-Validator 1.6.3 mit der Konfiguration für XRechnung 3.0.2 (alle akzeptiert) und Mustang 2.26.0 (PDF/A-3b und XML gültig).</li>
+</ul></div>
+
+<h2>Die fünf Beispiele</h2>
+
+<div class="box ex" id="standard">
+<h3>1. Standardrechnung mit 19 % Umsatzsteuer</h3>
+<p>Eine Webagentur stellt einer Bäckerei Webseite, Hosting und ein SSL-Zertifikat in Rechnung. Der häufigste Fall zwischen zwei Firmen im Inland.</p>
+<ul>
+<li>Rechnungsnummer RE-2026-0101, Leistungsdatum, Fälligkeitsdatum</li>
+<li>Käuferreferenz (BT-10): die Bestellnummer des Kunden</li>
+<li>Netto 1.747,80 €, Umsatzsteuer 19 % 332,08 €, Gesamtbetrag 2.079,88 €</li>
+<li>Bankverbindung mit IBAN und BIC, Zahlungsbedingungen</li>
+</ul>
+<p class="dl"><a href="beispiele/xrechnung-beispiel-standardrechnung.xml" download>XRechnung (XML, 9 KB)</a><a href="beispiele/zugferd-beispiel-standardrechnung.pdf" download>ZUGFeRD-PDF (53 KB)</a><a href="downloads/SheetFaktura-Beispielrechnung.xlsx" download>als Excel-Vorlage</a></p>
+</div>
+
+<div class="box ex" id="steuersaetze">
+<h3>2. Mehrere Steuersätze: 19 %, 7 % und 0 %</h3>
+<p>Wartung der Firmenwebseite (19 %), ein Fachbuch (7 %) und Photovoltaikmodule zum Nullsteuersatz.</p>
+<ul>
+<li>Je Steuersatz eine eigene Aufschlüsselung (Steuerkategorie S und Z)</li>
+<li>Gesamtbetrag 2.021,48 €, davon Umsatzsteuer 96,83 €</li>
+</ul>
+<p class="dl"><a href="beispiele/xrechnung-beispiel-mehrere-steuersaetze.xml" download>XRechnung (XML, 9 KB)</a><a href="beispiele/zugferd-beispiel-mehrere-steuersaetze.pdf" download>ZUGFeRD-PDF (54 KB)</a></p>
+</div>
+
+<div class="box ex" id="reverse-charge">
+<h3>3. Reverse Charge nach § 13b UStG (Bauleistung)</h3>
+<p>Ein Dachdecker arbeitet als Subunternehmer für eine Bauunternehmung. Die Umsatzsteuer schuldet der Leistungsempfänger.</p>
+<ul>
+<li>Steuerkategorie AE, Steuersatz 0 %, Hinweis "Steuerschuldnerschaft des Leistungsempfängers"</li>
+<li>USt-IdNr. von Verkäufer und Käufer (bei Reverse Charge verlangt die Norm EN 16931 eine Kennung beider Seiten)</li>
+<li>Gesamtbetrag 19.001,00 € ohne Umsatzsteuer</li>
+</ul>
+<p class="dl"><a href="beispiele/xrechnung-beispiel-reverse-charge-13b.xml" download>XRechnung (XML, 8 KB)</a><a href="beispiele/zugferd-beispiel-reverse-charge-13b.pdf" download>ZUGFeRD-PDF (53 KB)</a></p>
+</div>
+
+<div class="box ex" id="behoerde">
+<h3>4. Rechnung an eine Behörde mit Leitweg-ID und Skonto</h3>
+<p>Wartung eines Webportals für eine Stadtverwaltung. So sieht eine XRechnung aus, die Sie bei einer Behörde einreichen.</p>
+<ul>
+<li>Leitweg-ID 04011000-1234512345-06 als Käuferreferenz und als elektronische Adresse (Schema 0204). <a href="leitweg-id.html">Leitweg-ID prüfen</a></li>
+<li>Leistungszeitraum 01.09.2026 bis 30.09.2026</li>
+<li>Skonto im XRechnung-Format: 2 % bei Zahlung innerhalb von 10 Tagen</li>
+<li>Gesamtbetrag 2.758,42 €; die PDF trägt das ZUGFeRD-Profil XRechnung</li>
+</ul>
+<p class="dl"><a href="beispiele/xrechnung-beispiel-behoerde-leitweg-id.xml" download>XRechnung (XML, 7 KB)</a><a href="beispiele/zugferd-beispiel-behoerde-leitweg-id.pdf" download>ZUGFeRD-PDF (53 KB)</a></p>
+</div>
+
+<div class="box ex" id="kleinunternehmer">
+<h3>5. Kleinunternehmer nach § 19 UStG</h3>
+<p>Eine Fotografin ohne Umsatzsteuer berechnet Produktfotos. Kleinunternehmer müssen keine E-Rechnung ausstellen, dürfen es aber. Manche Kunden wünschen sie.</p>
+<ul>
+<li>Steuerkategorie E (steuerfrei) mit Hinweis auf § 19 UStG als Befreiungsgrund</li>
+<li>Nur Steuernummer, keine USt-IdNr.</li>
+<li>Gesamtbetrag 855,00 € ohne Umsatzsteuer</li>
+</ul>
+<p class="dl"><a href="beispiele/xrechnung-beispiel-kleinunternehmer.xml" download>XRechnung (XML, 7 KB)</a><a href="beispiele/zugferd-beispiel-kleinunternehmer.pdf" download>ZUGFeRD-PDF (53 KB)</a></p>
+<p class="meta">Mehr dazu: <a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a></p>
+</div>
+
+<h2>So lesen Sie eine XRechnung</h2>
+<p>Öffnen Sie eine der XML-Dateien im Browser oder in einem Texteditor. Die wichtigsten Stellen in der CII-Syntax:</p>
+<table>
+<tr><th>Element in der XML</th><th>Bedeutung</th></tr>
+<tr><td>ExchangedDocument / ID</td><td>Rechnungsnummer (BT-1)</td></tr>
+<tr><td>ExchangedDocument / TypeCode</td><td>Art: 380 Rechnung, 381 Gutschrift (BT-3)</td></tr>
+<tr><td>GuidelineSpecifiedDocumentContextParameter / ID</td><td>Kennung der Spezifikation, hier XRechnung 3.0 (BT-24)</td></tr>
+<tr><td>BuyerReference</td><td>Käuferreferenz oder Leitweg-ID (BT-10)</td></tr>
+<tr><td>SellerTradeParty, BuyerTradeParty</td><td>Verkäufer und Käufer mit Anschrift, Steuernummer oder USt-IdNr.</td></tr>
+<tr><td>IncludedSupplyChainTradeLineItem</td><td>eine Rechnungsposition mit Menge, Preis und Steuersatz</td></tr>
+<tr><td>ApplicableTradeTax</td><td>Umsatzsteuer je Steuersatz mit Kategorie (S, Z, E, AE)</td></tr>
+<tr><td>SpecifiedTradeSettlementHeaderMonetarySummation</td><td>Summen: netto, Steuer, Gesamtbetrag, Zahlbetrag</td></tr>
+</table>
+<p>In der ZUGFeRD-PDF stecken dieselben Daten als eingebettete Datei. Ein Viewer oder ein PDF-Programm mit Anhang-Ansicht zeigt sie an.</p>
+
+<h2>Eigene E-Rechnung aus einem Beispiel erstellen</h2>
+<p>Die Beispiele sind mit SheetFaktura entstanden. So machen Sie aus Ihrer eigenen Rechnung eine E-Rechnung wie oben:</p>
+<ol>
+<li><b>Mit Excel:</b> Die <a href="downloads/SheetFaktura-Beispielrechnung.xlsx" download>Standardrechnung als Excel-Vorlage</a> herunterladen, Ihre Daten eintragen und mit <a href="excel.html">SheetFaktura für Excel</a> im Browser umwandeln. Die Datei bleibt auf Ihrem Gerät.</li>
+<li><b>Mit Google Sheets:</b> das <a href="https://workspace.google.com/marketplace/app/sheetfaktura_erechnung_xrechnung_und_zug/470804978149" rel="noopener">Add-on SheetFaktura</a> installieren, "Vorlage anlegen" klicken, ausfüllen, "E-Rechnung erstellen".</li>
+</ol>
+<p>Vor dem Erstellen prüft SheetFaktura die Pflichtangaben und erklärt fehlende Angaben auf Deutsch. Sie erhalten beide Dateien: XRechnung (XML) und ZUGFeRD-PDF.</p>
+<p>5 E-Rechnungen sind kostenlos. Danach 69 Euro für 12 Monate, einmal zahlen, kein Abo. Für einzelne Rechnungen gibt es den 7-Tage-Pass für 4,90 Euro, außerdem ein Monats-Abo für 7,90 Euro, monatlich kündbar. Alle Preise zuzüglich Umsatzsteuer.</p>
+<p><a class="cta" href="excel.html">Excel-Rechnung umwandeln</a> &nbsp; <a href="xrechnung-google-sheets.html">Anleitung für Google Sheets</a></p>
+
+<h2>Weiterlesen</h2>
+<ul>
+<li><a href="e-rechnung-pflicht.html">E-Rechnungspflicht 2025 bis 2028</a>: was wann gilt und welche Formate zählen</li>
+<li><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a>: XRechnung mit Leitweg-ID einreichen</li>
+<li><a href="zugferd-google-sheets.html">ZUGFeRD-Rechnung aus Google Sheets</a>: welches Profil als E-Rechnung zählt</li>
+</ul>
+
+<h2>Quellen</h2>
+<ul>
+<li>KoSIT: <a href="https://xeinkauf.de/xrechnung/" rel="noopener">XRechnung, Standard und Prüfwerkzeug</a></li>
+<li>FeRD: <a href="https://www.ferd-net.de/" rel="noopener">ZUGFeRD und Factur-X</a></li>
+<li>Bundesministerium der Finanzen: <a href="https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html" rel="noopener">Fragen und Antworten zur E-Rechnung</a></li>
+</ul>
+<p>Stand: November 2026. Die Beispiele zeigen das Format, sie ersetzen keine Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="excel.html">SheetFaktura für Excel</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="e-rechnung-beispiele.html">E-Rechnung Beispiele</a><a href="leitweg-id.html">Leitweg-ID prüfen</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leitweg-ID finden und prüfen: Prüfziffer online checken | SheetFaktura</title>
+<meta name="description" content="Wo finde ich die Leitweg-ID, und stimmt sie? Aufbau, Prüfziffer und Bundesland kostenlos im Browser prüfen. Dazu: wohin die Leitweg-ID in der XRechnung gehört.">
+<link rel="canonical" href="https://sheetfaktura.de/leitweg-id.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SheetFaktura">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://sheetfaktura.de/leitweg-id.html">
+<meta property="og:title" content="Leitweg-ID finden und prüfen: Prüfziffer online checken">
+<meta property="og:description" content="Leitweg-ID kostenlos im Browser prüfen: Aufbau, Prüfziffer und Bundesland. Mit Erklärung, wo Sie die Leitweg-ID finden.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Wo finde ich die Leitweg-ID?","acceptedAnswer":{"@type":"Answer","text":"Die Leitweg-ID teilt Ihnen der öffentliche Auftraggeber mit, meist in der Bestellung, im Vertrag oder in den Vergabeunterlagen. Steht sie dort nicht, fragen Sie bei der bestellenden Stelle oder der Rechnungseingangsstelle nach."}},
+{"@type":"Question","name":"Brauche ich als Lieferant eine eigene Leitweg-ID?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Leitweg-ID gehört zu der Behörde, die Ihre Rechnung empfängt. Beantragt und vergeben wird sie innerhalb der Verwaltung."}},
+{"@type":"Question","name":"Was bedeutet eine gültige Prüfziffer?","acceptedAnswer":{"@type":"Answer","text":"Die Prüfziffer zeigt, dass die Leitweg-ID richtig aufgebaut ist und kein Tippfehler die Ziffern vertauscht hat. Ob die Leitweg-ID vergeben ist und zu Ihrem Auftrag gehört, kann nur der Auftraggeber bestätigen."}},
+{"@type":"Question","name":"Wohin gehört die Leitweg-ID in der XRechnung?","acceptedAnswer":{"@type":"Answer","text":"In das Feld Käuferreferenz (BT-10). Für den Versand über Peppol ist sie außerdem die elektronische Adresse des Empfängers mit dem Schema 0204."}},
+{"@type":"Question","name":"Werden meine Eingaben gespeichert?","acceptedAnswer":{"@type":"Answer","text":"Nein. Die Prüfung läuft in Ihrem Browser. Die Leitweg-ID wird nicht an uns oder Dritte übertragen."}}
+]}
+</script>
+<style>
+#lw-form { display: flex; gap: 8px; flex-wrap: wrap; margin: 6px 0 4px; }
+#lw-input { flex: 1 1 260px; font-size: 17px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font-family: ui-monospace, Menlo, Consolas, monospace; }
+#lw-form button { font-size: 16px; padding: 8px 16px; border: 0; border-radius: 6px; background: var(--brand); color: #fff; font-weight: 600; cursor: pointer; }
+#lw-result { min-height: 24px; }
+.lw-ok { color: #1a7f37; font-weight: 700; }
+.lw-bad { color: #b42318; font-weight: 700; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; background: var(--soft); padding: 0 3px; border-radius: 3px; }
+</style>
+<script src="assets/leitweg-pruefen.js" defer></script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>Leitweg-ID finden und prüfen</h1>
+<p class="lead">Rechnungen an Behörden brauchen eine Leitweg-ID. Ein Zahlendreher genügt, und die XRechnung wird abgewiesen. Hier prüfen Sie Aufbau und Prüfziffer einer Leitweg-ID, bevor Sie die Rechnung schicken. Die Prüfung läuft in Ihrem Browser, nichts wird übertragen.</p>
+
+<div class="box" id="pruefen">
+<b>Leitweg-ID eingeben</b>
+<form id="lw-form" autocomplete="off">
+<input id="lw-input" type="text" inputmode="text" spellcheck="false" placeholder="z. B. 04011000-1234512345-06" aria-label="Leitweg-ID">
+<button type="submit">Prüfen</button>
+</form>
+<p style="font-size:14px;margin:4px 0 8px"><a href="#pruefen" id="lw-example">Beispiel aus der Spezifikation einsetzen</a></p>
+<div id="lw-result" aria-live="polite"><noscript><p>Für die Prüfung muss JavaScript aktiviert sein.</p></noscript></div>
+</div>
+
+<h2>Was die Prüfung abdeckt</h2>
+<ul>
+<li><b>Zeichen und Länge:</b> nur Ziffern, Buchstaben A bis Z und Bindestriche, insgesamt 5 bis 46 Zeichen.</li>
+<li><b>Aufbau:</b> Grobadressierung, optional Feinadressierung, Prüfziffer, getrennt durch Bindestriche.</li>
+<li><b>Bundesland:</b> die ersten beiden Ziffern, 01 bis 16 für die Länder, 99 für den Bund.</li>
+<li><b>Prüfziffer:</b> Berechnung nach ISO/IEC 7064, Verfahren Modulo 97-10, wie bei der IBAN.</li>
+</ul>
+<p>Eine gültige Prüfziffer heißt: Die Leitweg-ID ist richtig aufgebaut und frei von typischen Tippfehlern. Ob sie vergeben ist und zu Ihrem Auftrag gehört, weiß nur Ihr Auftraggeber. Ändern Sie eine falsche Leitweg-ID deshalb nicht selbst, sondern fragen Sie nach.</p>
+
+<h2>Wo finde ich die Leitweg-ID?</h2>
+<ul>
+<li><b>In der Bestellung oder im Vertrag:</b> Öffentliche Auftraggeber geben die Leitweg-ID meist in der Bestellung, im Auftragsschreiben oder in den Vergabeunterlagen an.</li>
+<li><b>Bei der bestellenden Stelle:</b> Fehlt sie, fragen Sie dort oder bei der Rechnungseingangsstelle nach. Behörden derselben Stadt haben oft verschiedene Leitweg-IDs, nehmen Sie also die Ihres Auftrags.</li>
+<li><b>Bund:</b> Für Rechnungen an Bundesbehörden reichen Sie über die Plattform OZG-RE ein; dort sehen Sie die Leitweg-ID der Stelle ebenfalls.</li>
+<li><b>Leitweg-ID beantragen:</b> Das tun nur Behörden und öffentliche Einrichtungen selbst, bei der Koordinierungsstelle ihres Landes oder des Bundes. Als Lieferant brauchen Sie keine eigene Leitweg-ID.</li>
+</ul>
+
+<h2>Aufbau der Leitweg-ID</h2>
+<table>
+<tr><th>Teil</th><th>Inhalt</th><th>Pflicht</th></tr>
+<tr><td>Grobadressierung</td><td>2 bis 12 Ziffern: Bundesland (2), Regierungsbezirk (1), Landkreis (2), Gemeinde (3, 4 oder 7). Mögliche Längen also 2, 3, 5, 8, 9 oder 12 Ziffern.</td><td>ja</td></tr>
+<tr><td>Feinadressierung</td><td>bis zu 30 Ziffern oder Buchstaben, von Bund und Ländern jeweils selbst festgelegt</td><td>nein</td></tr>
+<tr><td>Prüfziffer</td><td>2 Ziffern, berechnet aus den Zeichen davor</td><td>ja</td></tr>
+</table>
+<p>Trennzeichen ist nur der normale Bindestrich. Ein Beispiel aus der Spezifikation: <code>04011000-1234512345-06</code>. Grobadressierung <code>04011000</code> (04 steht für Bremen), Feinadressierung <code>1234512345</code>, Prüfziffer <code>06</code>.</p>
+
+<h3>Die Kennzahlen der Länder</h3>
+<table>
+<tr><th>Ziffern</th><th>Land</th><th>Ziffern</th><th>Land</th></tr>
+<tr><td>01</td><td>Schleswig-Holstein</td><td>10</td><td>Saarland</td></tr>
+<tr><td>02</td><td>Hamburg</td><td>11</td><td>Berlin</td></tr>
+<tr><td>03</td><td>Niedersachsen</td><td>12</td><td>Brandenburg</td></tr>
+<tr><td>04</td><td>Bremen</td><td>13</td><td>Mecklenburg-Vorpommern</td></tr>
+<tr><td>05</td><td>Nordrhein-Westfalen</td><td>14</td><td>Sachsen</td></tr>
+<tr><td>06</td><td>Hessen</td><td>15</td><td>Sachsen-Anhalt</td></tr>
+<tr><td>07</td><td>Rheinland-Pfalz</td><td>16</td><td>Thüringen</td></tr>
+<tr><td>08</td><td>Baden-Württemberg</td><td>99</td><td>Bund</td></tr>
+<tr><td>09</td><td>Bayern</td><td></td><td></td></tr>
+</table>
+
+<h3>So wird die Prüfziffer berechnet</h3>
+<ol>
+<li>Grob- und Feinadressierung ohne Bindestriche hintereinander schreiben.</li>
+<li>Buchstaben in Zahlen umwandeln: A wird 10, B wird 11 und so weiter bis Z gleich 35.</li>
+<li>Zwei Nullen anhängen und den Rest bei Division durch 97 bilden.</li>
+<li>Prüfziffer = 98 minus diesen Rest, zweistellig mit führender Null.</li>
+</ol>
+<p>Zur Kontrolle: Die ganze Leitweg-ID ohne Bindestriche, Buchstaben umgewandelt, ergibt bei Division durch 97 den Rest 1.</p>
+
+<h2>Häufige Fehler</h2>
+<ul>
+<li><b>Langer Strich statt Bindestrich:</b> Textprogramme machen aus dem Bindestrich gern einen langen Strich. In der Rechnung muss der normale Bindestrich stehen.</li>
+<li><b>Leerzeichen:</b> Die Leitweg-ID wird ohne Leerzeichen geschrieben.</li>
+<li><b>Falsche Stelle in der Rechnung:</b> Die Leitweg-ID gehört in die Käuferreferenz, nicht nur in den Freitext oder den Betreff.</li>
+<li><b>Leitweg-ID einer anderen Stelle:</b> Eine Stadt hat oft viele Leitweg-IDs, etwa je Amt. Nehmen Sie die aus Ihrem Auftrag.</li>
+</ul>
+
+<h2>Wohin gehört die Leitweg-ID in der XRechnung?</h2>
+<p>In das Feld Käuferreferenz (Buyer reference, BT-10). Für den Versand über Peppol ist sie zugleich die elektronische Adresse des Empfängers (BT-49) mit dem Schema 0204. Die E-Rechnungsverordnung des Bundes verlangt die Leitweg-ID neben den umsatzsteuerlichen Pflichtangaben, der Bankverbindung, den Zahlungsbedingungen und einer E-Mail-Adresse des Rechnungsstellers. Mehr dazu unter <a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden: XRechnung mit Leitweg-ID</a>.</p>
+<p>Wie eine fertige XRechnung mit Leitweg-ID aussieht, zeigt das Beispiel <a href="e-rechnung-beispiele.html#behoerde">Rechnung an eine Behörde</a> zum Herunterladen.</p>
+
+<div class="box"><b>XRechnung mit Leitweg-ID erstellen</b>
+<p>Mit SheetFaktura tragen Sie die Leitweg-ID in das Feld <i>Käuferreferenz oder Leitweg-ID</i> ein. Die Prüfziffer wird geprüft, und Sie erhalten die XRechnung (XML) und eine ZUGFeRD-PDF im Profil XRechnung. Das geht in Google Sheets oder ohne Installation mit Ihrer Excel-Rechnung im Browser.</p>
+<p>5 E-Rechnungen sind kostenlos. Danach 69 Euro für 12 Monate, einmal zahlen, kein Abo. Für einzelne Rechnungen gibt es den 7-Tage-Pass für 4,90 Euro, außerdem ein Monats-Abo für 7,90 Euro, monatlich kündbar. Alle Preise zuzüglich Umsatzsteuer.</p>
+<p><a class="cta" href="excel.html">Excel-Rechnung umwandeln</a> &nbsp; <a href="https://workspace.google.com/marketplace/app/sheetfaktura_erechnung_xrechnung_und_zug/470804978149" rel="noopener">Add-on für Google Sheets</a></p>
+</div>
+
+<h2>Quellen</h2>
+<ul>
+<li>KoSIT: <a href="https://e-rechnung.service.rlp.de/fileadmin/zre-upload.rlp.de/allgemeine_Dokumente/Leitweg-ID-Formatspezifikation-v2-0-2.pdf" rel="noopener">Leitweg-ID Format-Spezifikation, Version 2.0.2 vom 28. Juli 2021 (PDF)</a></li>
+<li>E-Rechnungsverordnung des Bundes (ERechV): <a href="https://www.gesetze-im-internet.de/erechv/" rel="noopener">gesetze-im-internet.de</a></li>
+</ul>
+<p>Stand: November 2026. Diese Seite ist keine Rechts- oder Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="excel.html">SheetFaktura für Excel</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="e-rechnung-beispiele.html">E-Rechnung Beispiele</a><a href="leitweg-id.html">Leitweg-ID prüfen</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>

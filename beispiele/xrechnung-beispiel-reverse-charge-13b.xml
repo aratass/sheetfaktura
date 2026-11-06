@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rsm:CrossIndustryInvoice xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100 ../schema/D16B%20SCRDM%20(Subset)/uncoupled%20clm/CII/uncefact/data/standard/CrossIndustryInvoice_100pD16B.xsd" xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100" xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100" xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100" xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100">
+	<rsm:ExchangedDocumentContext>
+		<ram:BusinessProcessSpecifiedDocumentContextParameter>
+			<ram:ID>urn:fdc:peppol.eu:2017:poacc:billing:01:1.0</ram:ID>
+		</ram:BusinessProcessSpecifiedDocumentContextParameter>
+		<ram:GuidelineSpecifiedDocumentContextParameter>
+			<ram:ID>urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0</ram:ID>
+		</ram:GuidelineSpecifiedDocumentContextParameter>
+	</rsm:ExchangedDocumentContext>
+	<rsm:ExchangedDocument>
+		<ram:ID>RE-2026-0103</ram:ID>
+		<ram:TypeCode>380</ram:TypeCode>
+		<ram:IssueDateTime>
+			<udt:DateTimeString format="102">20261001</udt:DateTimeString>
+		</ram:IssueDateTime>
+	</rsm:ExchangedDocument>
+	<rsm:SupplyChainTradeTransaction>
+		<ram:IncludedSupplyChainTradeLineItem>
+			<ram:AssociatedDocumentLineDocument>
+				<ram:LineID>1</ram:LineID>
+			</ram:AssociatedDocumentLineDocument>
+			<ram:SpecifiedTradeProduct>
+				<ram:Name>Dacheindeckung Neubau Lindenweg 5, Bauabschnitt 2</ram:Name>
+			</ram:SpecifiedTradeProduct>
+			<ram:SpecifiedLineTradeAgreement>
+				<ram:NetPriceProductTradePrice>
+					<ram:ChargeAmount>18450</ram:ChargeAmount>
+				</ram:NetPriceProductTradePrice>
+			</ram:SpecifiedLineTradeAgreement>
+			<ram:SpecifiedLineTradeDelivery>
+				<ram:BilledQuantity unitCode="LS">1</ram:BilledQuantity>
+			</ram:SpecifiedLineTradeDelivery>
+			<ram:SpecifiedLineTradeSettlement>
+				<ram:ApplicableTradeTax>
+					<ram:TypeCode>VAT</ram:TypeCode>
+					<ram:CategoryCode>AE</ram:CategoryCode>
+					<ram:RateApplicablePercent>0</ram:RateApplicablePercent>
+				</ram:ApplicableTradeTax>
+				<ram:SpecifiedTradeSettlementLineMonetarySummation>
+					<ram:LineTotalAmount>18450.00</ram:LineTotalAmount>
+				</ram:SpecifiedTradeSettlementLineMonetarySummation>
+			</ram:SpecifiedLineTradeSettlement>
+		</ram:IncludedSupplyChainTradeLineItem>
+		<ram:IncludedSupplyChainTradeLineItem>
+			<ram:AssociatedDocumentLineDocument>
+				<ram:LineID>2</ram:LineID>
+			</ram:AssociatedDocumentLineDocument>
+			<ram:SpecifiedTradeProduct>
+				<ram:Name>Zusatzarbeiten Dachrinne</ram:Name>
+			</ram:SpecifiedTradeProduct>
+			<ram:SpecifiedLineTradeAgreement>
+				<ram:NetPriceProductTradePrice>
+					<ram:ChargeAmount>58</ram:ChargeAmount>
+				</ram:NetPriceProductTradePrice>
+			</ram:SpecifiedLineTradeAgreement>
+			<ram:SpecifiedLineTradeDelivery>
+				<ram:BilledQuantity unitCode="HUR">9.5</ram:BilledQuantity>
+			</ram:SpecifiedLineTradeDelivery>
+			<ram:SpecifiedLineTradeSettlement>
+				<ram:ApplicableTradeTax>
+					<ram:TypeCode>VAT</ram:TypeCode>
+					<ram:CategoryCode>AE</ram:CategoryCode>
+					<ram:RateApplicablePercent>0</ram:RateApplicablePercent>
+				</ram:ApplicableTradeTax>
+				<ram:SpecifiedTradeSettlementLineMonetarySummation>
+					<ram:LineTotalAmount>551.00</ram:LineTotalAmount>
+				</ram:SpecifiedTradeSettlementLineMonetarySummation>
+			</ram:SpecifiedLineTradeSettlement>
+		</ram:IncludedSupplyChainTradeLineItem>
+		<ram:ApplicableHeaderTradeAgreement>
+			<ram:BuyerReference>Bestellung 4711</ram:BuyerReference>
+			<ram:SellerTradeParty>
+				<ram:Name>Dachdeckerei Weber GmbH</ram:Name>
+				<ram:SpecifiedLegalOrganization>
+					<ram:ID>HRB 123456 B</ram:ID>
+				</ram:SpecifiedLegalOrganization>
+				<ram:DefinedTradeContact>
+					<ram:PersonName>Anna Muster</ram:PersonName>
+					<ram:TelephoneUniversalCommunication>
+						<ram:CompleteNumber>+49 30 1234567</ram:CompleteNumber>
+					</ram:TelephoneUniversalCommunication>
+					<ram:EmailURIUniversalCommunication>
+						<ram:URIID>rechnung@muster-webdesign.example</ram:URIID>
+					</ram:EmailURIUniversalCommunication>
+				</ram:DefinedTradeContact>
+				<ram:PostalTradeAddress>
+					<ram:PostcodeCode>10115</ram:PostcodeCode>
+					<ram:LineOne>Hauptstraße 12</ram:LineOne>
+					<ram:CityName>Berlin</ram:CityName>
+					<ram:CountryID>DE</ram:CountryID>
+				</ram:PostalTradeAddress>
+				<ram:URIUniversalCommunication>
+					<ram:URIID schemeID="EM">rechnung@muster-webdesign.example</ram:URIID>
+				</ram:URIUniversalCommunication>
+				<ram:SpecifiedTaxRegistration>
+					<ram:ID schemeID="VA">DE123456789</ram:ID>
+				</ram:SpecifiedTaxRegistration>
+				<ram:SpecifiedTaxRegistration>
+					<ram:ID schemeID="FC">30/123/45678</ram:ID>
+				</ram:SpecifiedTaxRegistration>
+			</ram:SellerTradeParty>
+			<ram:BuyerTradeParty>
+				<ram:ID>K-1007</ram:ID>
+				<ram:Name>Bauunternehmung Klein GmbH</ram:Name>
+				<ram:DefinedTradeContact>
+					<ram:PersonName>Jonas Schmidt</ram:PersonName>
+				</ram:DefinedTradeContact>
+				<ram:PostalTradeAddress>
+					<ram:PostcodeCode>04109</ram:PostcodeCode>
+					<ram:LineOne>Marktplatz 3</ram:LineOne>
+					<ram:CityName>Leipzig</ram:CityName>
+					<ram:CountryID>DE</ram:CountryID>
+				</ram:PostalTradeAddress>
+				<ram:URIUniversalCommunication>
+					<ram:URIID schemeID="EM">buchhaltung@baeckerei-schmidt.example</ram:URIID>
+				</ram:URIUniversalCommunication>
+				<ram:SpecifiedTaxRegistration>
+					<ram:ID schemeID="VA">DE987654321</ram:ID>
+				</ram:SpecifiedTaxRegistration>
+			</ram:BuyerTradeParty>
+		</ram:ApplicableHeaderTradeAgreement>
+		<ram:ApplicableHeaderTradeDelivery>
+			<ram:ActualDeliverySupplyChainEvent>
+				<ram:OccurrenceDateTime>
+					<udt:DateTimeString format="102">20260930</udt:DateTimeString>
+				</ram:OccurrenceDateTime>
+			</ram:ActualDeliverySupplyChainEvent>
+		</ram:ApplicableHeaderTradeDelivery>
+		<ram:ApplicableHeaderTradeSettlement>
+			<ram:PaymentReference>RE-2026-0103</ram:PaymentReference>
+			<ram:InvoiceCurrencyCode>EUR</ram:InvoiceCurrencyCode>
+			<ram:SpecifiedTradeSettlementPaymentMeans>
+				<ram:TypeCode>58</ram:TypeCode>
+				<ram:Information>SEPA credit transfer</ram:Information>
+				<ram:PayeePartyCreditorFinancialAccount>
+					<ram:IBANID>DE02120300000000202051</ram:IBANID>
+					<ram:AccountName>Muster Webdesign GmbH</ram:AccountName>
+				</ram:PayeePartyCreditorFinancialAccount>
+				<ram:PayeeSpecifiedCreditorFinancialInstitution>
+					<ram:BICID>BYLADEM1001</ram:BICID>
+				</ram:PayeeSpecifiedCreditorFinancialInstitution>
+			</ram:SpecifiedTradeSettlementPaymentMeans>
+			<ram:ApplicableTradeTax>
+				<ram:CalculatedAmount>0.00</ram:CalculatedAmount>
+				<ram:TypeCode>VAT</ram:TypeCode>
+				<ram:ExemptionReason>Steuerschuldnerschaft des Leistungsempfängers</ram:ExemptionReason>
+				<ram:BasisAmount>19001.00</ram:BasisAmount>
+				<ram:CategoryCode>AE</ram:CategoryCode>
+				<ram:ExemptionReasonCode>VATEX-EU-AE</ram:ExemptionReasonCode>
+				<ram:RateApplicablePercent>0</ram:RateApplicablePercent>
+			</ram:ApplicableTradeTax>
+			<ram:SpecifiedTradePaymentTerms>
+				<ram:Description>Zahlbar innerhalb von 14 Tagen ohne Abzug.</ram:Description>
+				<ram:DueDateDateTime>
+					<udt:DateTimeString format="102">20261015</udt:DateTimeString>
+				</ram:DueDateDateTime>
+			</ram:SpecifiedTradePaymentTerms>
+			<ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+				<ram:LineTotalAmount>19001.00</ram:LineTotalAmount>
+				<ram:TaxBasisTotalAmount>19001.00</ram:TaxBasisTotalAmount>
+				<ram:TaxTotalAmount currencyID="EUR">0.00</ram:TaxTotalAmount>
+				<ram:GrandTotalAmount>19001.00</ram:GrandTotalAmount>
+				<ram:DuePayableAmount>19001.00</ram:DuePayableAmount>
+			</ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+		</ram:ApplicableHeaderTradeSettlement>
+	</rsm:SupplyChainTradeTransaction>
+</rsm:CrossIndustryInvoice>

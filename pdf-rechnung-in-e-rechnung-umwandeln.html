@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDF-Rechnung in ZUGFeRD oder XRechnung umwandeln | SheetFaktura</title>
+<meta name="description" content="PDF-Rechnung in eine E-Rechnung umwandeln: warum eine PDF allein nicht reicht und wie aus Ihrer Rechnung aus Excel, Word oder PDF eine ZUGFeRD-PDF und eine XRechnung wird. 5 kostenlos.">
+<link rel="canonical" href="https://sheetfaktura.de/pdf-rechnung-in-e-rechnung-umwandeln.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SheetFaktura">
+<meta property="og:locale" content="de_DE">
+<meta property="og:url" content="https://sheetfaktura.de/pdf-rechnung-in-e-rechnung-umwandeln.html">
+<meta property="og:title" content="PDF-Rechnung in ZUGFeRD oder XRechnung umwandeln">
+<meta property="og:description" content="Warum eine PDF allein keine E-Rechnung ist und wie aus Ihrer Rechnung aus Excel, Word oder PDF eine ZUGFeRD-PDF und eine XRechnung wird.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Kann ich eine PDF-Rechnung einfach in ZUGFeRD umwandeln?","acceptedAnswer":{"@type":"Answer","text":"Nicht durch Umbenennen oder Speichern unter. Eine ZUGFeRD-Rechnung ist eine PDF/A-3-Datei, in der die Rechnungsdaten als XML eingebettet sind. Diese Daten müssen einmal strukturiert erfasst werden, zum Beispiel in einer Vorlage, aus der dann die ZUGFeRD-PDF und die XRechnung entstehen."}},
+{"@type":"Question","name":"Was ist bei Online-Konvertern zu beachten, die Daten aus der PDF auslesen?","acceptedAnswer":{"@type":"Answer","text":"Prüfen Sie das Ergebnis sorgfältig. Maßgeblich sind die strukturierten Rechnungsdaten in der XML, nicht das sichtbare PDF. Ein falsch gelesener Betrag oder Steuersatz steht dann in der E-Rechnung."}},
+{"@type":"Question","name":"Bleibt mein bisheriges Rechnungslayout erhalten?","acceptedAnswer":{"@type":"Answer","text":"Bei SheetFaktura nicht. SheetFaktura erstellt eine neue PDF in einem schlichten Rechnungslayout und bettet die XML ein. Dazu erhalten Sie die XRechnung als eigene XML-Datei."}},
+{"@type":"Question","name":"Welche Datei schicke ich meinem Kunden?","acceptedAnswer":{"@type":"Answer","text":"Firmen erhalten meist die ZUGFeRD-PDF, weil sie lesbar ist und die Daten enthält. Behörden verlangen in der Regel die XRechnung, die Sie in deren Rechnungsportal hochladen."}},
+{"@type":"Question","name":"Was kostet das?","acceptedAnswer":{"@type":"Answer","text":"5 E-Rechnungen sind kostenlos. Danach 69 Euro für 12 Monate, einmal zahlen, kein Abo. Für einzelne Rechnungen gibt es den 7-Tage-Pass für 4,90 Euro, außerdem ein Monats-Abo für 7,90 Euro, monatlich kündbar. Alle Preise zuzüglich Umsatzsteuer."}}
+]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="xrechnung-google-sheets.html">Anleitung</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>PDF-Rechnung in E-Rechnung umwandeln: ZUGFeRD und XRechnung</h1>
+<p class="lead">Viele Firmen schreiben Rechnungen in Word oder Excel und verschicken sie als PDF. Zwischen Unternehmen reicht das bald nicht mehr. Hier steht, warum eine PDF allein keine E-Rechnung ist und wie Sie aus Ihrer Rechnung in wenigen Minuten eine ZUGFeRD-PDF und eine XRechnung machen.</p>
+
+<div class="box"><b>Kurz gesagt</b>
+<ul>
+<li>Eine PDF wird nicht durch Umbenennen oder Speichern unter zur E-Rechnung. Die Rechnungsdaten müssen als XML vorliegen: allein als XRechnung oder in die PDF eingebettet als ZUGFeRD.</li>
+<li><b>Rechnung in Excel:</b> Nehmen Sie die Excel-Datei statt der PDF und wandeln Sie sie mit <a href="excel.html">SheetFaktura für Excel</a> im Browser um.</li>
+<li><b>Rechnung in Word oder nur als PDF:</b> Übertragen Sie die Angaben einmal in die kostenlose Excel-Vorlage. Danach ist jede weitere Rechnung eine Kopie mit neuen Werten.</li>
+<li>Sie erhalten beide Dateien: die ZUGFeRD-PDF für Firmen und die XRechnung für Behörden. 5 E-Rechnungen sind kostenlos.</li>
+</ul></div>
+<p><a class="cta" href="excel.html">Excel-Rechnung umwandeln</a></p>
+
+<h2>Warum eine PDF-Rechnung nicht reicht</h2>
+<p>Eine Rechnung, die Sie in Excel schreiben und als PDF speichern, ist keine E-Rechnung im Sinne des Umsatzsteuergesetzes. Eine E-Rechnung wird in einem strukturierten elektronischen Format ausgestellt, übermittelt und empfangen, das eine elektronische Verarbeitung ermöglicht. Eine PDF ohne eingebettete Rechnungsdaten ist eine sonstige Rechnung.</p>
+<p>Für Rechnungen an andere Unternehmen im Inland sind Papier und PDF nur noch übergangsweise erlaubt. Für Umsätze aus 2025 und 2026 dürfen Sie bis Ende 2026 noch Papier oder, mit Zustimmung des Empfängers, eine PDF verwenden. Für Umsätze aus 2027 gilt das bis Ende 2027 nur, wenn Ihr Gesamtumsatz im Vorjahr nicht mehr als 800.000 Euro betrug. Danach ist die E-Rechnung Pflicht. Ausgenommen bleiben unter anderem Kleinunternehmer und Rechnungen bis 250 Euro. Alle Fristen: <a href="e-rechnung-pflicht.html">E-Rechnungspflicht 2025, 2027 und 2028</a>.</p>
+
+<h2>Was "umwandeln" bei der E-Rechnung bedeutet</h2>
+<p>Eine ZUGFeRD-Rechnung ist eine PDF im Archivformat PDF/A-3, in der die Rechnungsdaten als XML-Datei eingebettet sind. Menschen lesen die PDF, Programme die XML. Eine XRechnung ist nur die XML-Datei. In beiden Fällen müssen die Rechnungsdaten also einmal strukturiert vorliegen: Rechnungsnummer, Daten, Verkäufer, Käufer, Positionen, Steuersätze, Summen und Zahlungsangaben.</p>
+<p>Diese Daten stecken in Ihrer PDF zwar als Text, aber nicht in einer Form, die ein Programm sicher lesen kann. Deshalb gibt es zwei Wege: die Daten aus der PDF auslesen lassen oder sie einmal in eine Vorlage übertragen, aus der beide Dateien entstehen.</p>
+
+<h2>Weg 1: Die Rechnung kommt aus Excel</h2>
+<ol>
+<li>Auf der Seite <a href="excel.html">SheetFaktura für Excel</a> die Vorlage herunterladen. Alle Felder erklärt die Seite <a href="rechnungsvorlage-excel-e-rechnung.html">Rechnungsvorlage Excel für die E-Rechnung</a>.</li>
+<li>Ihre bisherigen Angaben einmal in die gelben Felder übertragen: Ihre Firma, den Kunden, die Positionen, Steuerart und Zahlung. Ab dann kopieren Sie für jede neue Rechnung nur das Blatt.</li>
+<li>Die Datei als .xlsx speichern und auf der Seite auswählen. Fehlende Pflichtangaben werden auf Deutsch erklärt, mit der Zelle.</li>
+<li>"E-Rechnung erstellen" klicken und beide Dateien speichern: ZUGFeRD-PDF und XRechnung.</li>
+</ol>
+<p>Die Datei wird nur in Ihrem Browser gelesen. Ihre Rechnungsdaten werden nicht an uns übertragen. Ausführlich: <a href="xrechnung-aus-excel.html">XRechnung aus Excel erstellen</a>.</p>
+
+<h2>Weg 2: Die Rechnung kommt aus Word oder liegt nur als PDF vor</h2>
+<p>Öffnen Sie die Excel-Vorlage in Excel, Excel im Browser, LibreOffice Calc oder Numbers und übertragen Sie die Angaben aus Ihrer Rechnung. Diese Angaben brauchen Sie:</p>
+<table>
+<tr><th>Bereich</th><th>Angaben</th></tr>
+<tr><td>Ihre Firma</td><td>Name, Anschrift, Steuernummer oder USt-IdNr., Telefon, E-Mail, Bankverbindung</td></tr>
+<tr><td>Kunde</td><td>Name, Anschrift, bei Firmen die USt-IdNr. wenn nötig, E-Mail für E-Rechnungen oder Leitweg-ID</td></tr>
+<tr><td>Rechnung</td><td>Rechnungsnummer, Rechnungsdatum, Leistungsdatum oder Leistungszeitraum, Käuferreferenz (zum Beispiel die Bestellnummer)</td></tr>
+<tr><td>Positionen</td><td>Beschreibung, Menge, Einheit, Einzelpreis netto, Steuersatz</td></tr>
+<tr><td>Zahlung</td><td>Fälligkeit, Zahlungsbedingungen, gegebenenfalls Skonto</td></tr>
+</table>
+<p>Summen und Steuer rechnet SheetFaktura selbst aus. Speichern Sie die Datei als .xlsx und wandeln Sie sie auf der Seite <a href="excel.html">SheetFaktura für Excel</a> um. Wer mit Google arbeitet, nutzt stattdessen das <a href="xrechnung-google-sheets.html">Add-on für Google Sheets</a>.</p>
+<p>Ihr bisheriges Layout bleibt dabei nicht erhalten: SheetFaktura erstellt eine neue PDF in einem schlichten Rechnungslayout und bettet die XML ein. So sieht das Ergebnis aus: <a href="e-rechnung-beispiele.html">E-Rechnung Beispiele zum Download</a>.</p>
+
+<h2>Online-Konverter, die Daten aus der PDF lesen</h2>
+<p>Manche Werkzeuge lesen die Angaben automatisch aus einer PDF aus. Das spart Tipparbeit, birgt aber ein Risiko: Maßgeblich sind die strukturierten Rechnungsdaten in der XML, nicht das sichtbare PDF. Ein falsch gelesener Betrag, Steuersatz oder eine vertauschte Anschrift steht dann in der E-Rechnung. Prüfen Sie das Ergebnis deshalb immer Feld für Feld. Bei einer Vorlage tragen Sie die Werte einmal selbst ein und kennen sie genau.</p>
+
+<h2>Welche Datei bekommt welcher Kunde?</h2>
+<ul>
+<li><b>Firmen:</b> meist die ZUGFeRD-PDF. Sie ist lesbar wie bisher und enthält die Daten für die Buchhaltung des Kunden.</li>
+<li><b>Behörden:</b> in der Regel die XRechnung mit Leitweg-ID, hochgeladen im Rechnungsportal der Behörde. Mehr unter <a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a> und <a href="leitweg-id.html">Leitweg-ID prüfen</a>.</li>
+<li><b>Privatkunden:</b> keine E-Rechnung nötig.</li>
+</ul>
+
+<div class="box"><b>Preise</b>
+<p>5 E-Rechnungen sind kostenlos. Danach 69 Euro für 12 Monate, einmal zahlen, kein Abo. Für einzelne Rechnungen gibt es den 7-Tage-Pass für 4,90 Euro, außerdem ein Monats-Abo für 7,90 Euro, monatlich kündbar. Alle Preise zuzüglich Umsatzsteuer.</p>
+<p><a class="cta" href="excel.html">Excel-Rechnung umwandeln</a></p>
+</div>
+
+<h2>Quellen</h2>
+<ul>
+<li>Bundesministerium der Finanzen: <a href="https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html" rel="noopener">Fragen und Antworten zur Einführung der obligatorischen E-Rechnung</a></li>
+<li>Umsatzsteuergesetz: <a href="https://www.gesetze-im-internet.de/ustg_1980/__14.html" rel="noopener">§ 14 UStG</a> und <a href="https://www.gesetze-im-internet.de/ustg_1980/__27.html" rel="noopener">§ 27 UStG</a> (Absatz 38: Übergangsregeln)</li>
+<li>FeRD: <a href="https://www.ferd-net.de/" rel="noopener">ZUGFeRD und Factur-X</a></li>
+</ul>
+<p>Stand: November 2026. Diese Seite ist keine Steuerberatung; im Einzelfall klären Sie Fragen bitte mit Ihrer Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="excel.html">SheetFaktura für Excel</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="e-rechnung-beispiele.html">E-Rechnung Beispiele</a><a href="leitweg-id.html">Leitweg-ID prüfen</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="hilfe.html">Hilfe</a></div></footer>
+</body>
+</html>
