@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abschlags- und Schlussrechnung als E-Rechnung ab 2027 | SheetFaktura</title>
+<meta name="description" content="Abschläge 2026, Schlussrechnung 2027: Was das BMF-Schreiben vom 15. Oktober 2026 regelt, wie BT-113 und BT-22 die Abschläge abziehen und wie Sie die Schlussrechnung aus Excel erstellen.">
+<link rel="canonical" href="https://sheetfaktura.de/abschlagsrechnung-schlussrechnung-e-rechnung.html">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Muss ich Abschlagsrechnungen aus 2026 als E-Rechnung wiederholen?","acceptedAnswer":{"@type":"Answer","text":"Nein. Anzahlungs-, Voraus- und Abschlagsrechnungen, die Sie vor Ihrer eigenen E-Rechnungspflicht zulässig erteilt haben, müssen nicht als E-Rechnung übermittelt werden, auch wenn Leistung und Zahlung erst danach erfolgen (BMF-Schreiben vom 15. Oktober 2026, Randnummer 2)."}},
+{"@type":"Question","name":"Wie ziehe ich die Abschläge in der Schlussrechnung als E-Rechnung ab?","acceptedAnswer":{"@type":"Answer","text":"Bis zum 30. Juni 2030 wird es nicht beanstandet, wenn die vereinnahmten Teilentgelte im strukturierten Teil als Summe im Feld BT-113 (Paid amount) abgezogen und die nötigen Einzelheiten im Freitextfeld BT-22 (Invoice note) angegeben werden. Alternativ ist ein eingebetteter Anhang möglich, auf den der strukturierte Teil ausdrücklich hinweist."}},
+{"@type":"Question","name":"Darf ich statt einer Schlussrechnung eine Restrechnung stellen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Statt einer Endrechnung kann auch eine Restrechnung erteilt werden (BMF-Schreiben vom 15. Oktober 2024, Randnummer 47)."}},
+{"@type":"Question","name":"Gilt das auch für Bauleistungen?","acceptedAnswer":{"@type":"Answer","text":"Ja. Zusätzlich wird es bei E-Rechnungen über Bauleistungen derzeit nicht beanstandet, wenn der strukturierte Teil nur die Gewerke mit ihren Summen enthält und eine eingebettete, lesbare Anlage die Aufschlüsselung nach dem Leistungsverzeichnis zeigt, auf die eindeutig hingewiesen wird."}}
+]}
+</script>
+</head>
+<body>
+<header><div class="wrap"><img src="icon.svg" alt=""><a class="brand" href="index.html">SheetFaktura</a><nav><a href="index.html">Start</a><a href="excel.html">Excel</a><a href="hilfe.html">Hilfe</a><a href="datenschutz.html">Datenschutz</a><a href="impressum.html">Impressum</a></nav></div></header>
+<main><div class="wrap">
+
+<h1>Abschlags- und Schlussrechnung als E-Rechnung ab 2027</h1>
+<p class="stand">Stand: November 2026</p>
+<p class="lead">Viele Aufträge laufen über den Jahreswechsel: Abschläge 2026, Schlussrechnung 2027. Wer ab dem 1. Januar 2027 E-Rechnungen ausstellen muss, fragt sich: Müssen die alten Abschlagsrechnungen neu? Wie zieht die Schlussrechnung die Abschläge ab? Das Bundesfinanzministerium hat dazu am 15. Oktober 2026 ein weiteres Schreiben zur E-Rechnung veröffentlicht. Hier das Wichtigste, mit den Randnummern.</p>
+
+<div class="box"><b>Kurz gesagt</b>
+<ul>
+<li>Anzahlungs-, Voraus- und Abschlagsrechnungen, die Sie vor Ihrer eigenen E-Rechnungspflicht zulässig auf Papier oder als PDF erteilt haben, müssen Sie nicht als E-Rechnung wiederholen, auch wenn Leistung und Zahlung erst danach kommen (Randnummer 2).</li>
+<li>Für Rechnungen über Anzahlungen gelten die Regeln für Rechnungen sinngemäß (§ 14 Absatz 5 Satz 1 UStG). Ab Ihrem Pflichtbeginn sind deshalb auch neue Abschlagsrechnungen an Unternehmen im Inland E-Rechnungen.</li>
+<li>In der Schlussrechnung ziehen Sie die vorher vereinnahmten Teilentgelte und die Steuer darauf ab (§ 14 Absatz 5 Satz 2 UStG). In einer E-Rechnung geht das bis zum 30. Juni 2030 als Summe im Feld BT-113 mit den Einzelheiten im Freitextfeld BT-22 (Randnummer 3).</li>
+<li>Alternativ ziehen Sie die Teilentgelte in einem eingebetteten Anhang ab, auf den der strukturierte Teil ausdrücklich hinweist, ebenfalls bis zum 30. Juni 2030 (Randnummer 4).</li>
+</ul></div>
+
+<h2>Was das Gesetz verlangt</h2>
+<p>§ 14 Absatz 5 UStG regelt Rechnungen über Anzahlungen und die Endrechnung, umgangssprachlich die Schlussrechnung:</p>
+<blockquote>„Vereinnahmt der Unternehmer das Entgelt oder einen Teil des Entgelts für eine noch nicht ausgeführte Lieferung oder sonstige Leistung, gelten die Absätze 1 bis 4 sinngemäß. Wird eine Endrechnung erteilt, sind in ihr die vor Ausführung der Lieferung oder sonstigen Leistung vereinnahmten Teilentgelte und die auf sie entfallenden Steuerbeträge abzusetzen, wenn über die Teilentgelte Rechnungen im Sinne der Absätze 1 bis 4 ausgestellt worden sind.“</blockquote>
+<p>Nach dem BMF-Schreiben vom 15. Oktober 2024 sind die Anforderungen an eine Endrechnung derzeit noch nicht im strukturierten Teil einer E-Rechnung darstellbar (Randnummer 48). Deshalb gelten die folgenden Erleichterungen.</p>
+
+<h2>Was das BMF-Schreiben vom 15. Oktober 2026 regelt</h2>
+<h3>Abschlagsrechnungen vor dem Pflichtbeginn (Randnummer 2)</h3>
+<p>Anzahlungs-, Voraus- und Abschlagsrechnungen, die ein Unternehmer unter Beachtung der Übergangsregeln in § 27 Absatz 38 UStG vor seiner Pflicht zur E-Rechnung erteilt, müssen nicht als E-Rechnung übermittelt werden. Das gilt auch, wenn Leistung und Zahlung erst nach diesem Zeitpunkt erfolgen.</p>
+<h3>Schlussrechnung mit BT-113 und BT-22 (Randnummer 3)</h3>
+<blockquote>„Bis zum 30. Juni 2030 wird es bei einer Endrechnung in Form einer E-Rechnung nicht beanstandet, wenn die Absetzung der bereits vereinnahmten Teilentgelte (§ 14 Absatz 5 UStG) innerhalb des strukturierten Teils als Summe über das Feld BT-113 („Paid amount“) vorgenommen wird und Angaben hinsichtlich der erforderlichen Details zu den Teilentgelten (vgl. Abschnitt 14.8 Abs. 7 und 8 UStAE) über das Freitextfeld BT-22 („Invoice note“) erfolgen.“</blockquote>
+<h3>Schlussrechnung mit Anhang (Randnummer 4)</h3>
+<p>Alternativ wird es nicht beanstandet, wenn die Teilentgelte in einem eingebetteten, unstrukturierten Anhang abgezogen werden, der die Anforderungen von Abschnitt 14.8 Absatz 8 Nummer 2 UStAE erfüllt, und der strukturierte Teil ausdrücklich auf diese Anlage hinweist. Diese Regel stand schon im BMF-Schreiben vom 15. Oktober 2024 (Randnummer 48) mit der Frist 31. Dezember 2027. Sie gilt jetzt bis zum 30. Juni 2030.</p>
+<h3>Restrechnung statt Schlussrechnung</h3>
+<p>Statt einer Endrechnung kann auch eine Restrechnung erteilt werden, die nur den noch offenen Teil abrechnet (BMF-Schreiben vom 15. Oktober 2024, Randnummer 47).</p>
+
+<h2>Beispiel: Abschläge 2026, Schlussrechnung 2027</h2>
+<p>Ein Unternehmen mit mehr als 800.000 Euro Gesamtumsatz im Jahr 2026 führt einen Auftrag über den Jahreswechsel aus:</p>
+<table>
+<tr><th>Dokument</th><th>Erteilt</th><th>Form</th></tr>
+<tr><td>1. Abschlagsrechnung</td><td>Oktober 2026</td><td>Papier oder, mit Zustimmung des Kunden, PDF</td></tr>
+<tr><td>2. Abschlagsrechnung</td><td>Dezember 2026</td><td>Papier oder, mit Zustimmung des Kunden, PDF</td></tr>
+<tr><td>3. Abschlagsrechnung</td><td>Februar 2027</td><td>E-Rechnung</td></tr>
+<tr><td>Schlussrechnung</td><td>April 2027</td><td>E-Rechnung: die drei Abschläge als Summe in BT-113, die Einzelheiten in BT-22</td></tr>
+</table>
+<p>Die beiden Abschlagsrechnungen aus 2026 müssen nicht nachträglich als E-Rechnung ausgestellt werden (Randnummer 2). Ob die Pflicht zur E-Rechnung 2027 für Sie gilt, hängt am Gesamtumsatz 2026: <a href="e-rechnung-800000-euro-gesamtumsatz.html">So zählen die 800.000 Euro</a>.</p>
+
+<h2>Bauleistungen</h2>
+<p>Rechnungen über Bauleistungen folgen oft dem Leistungsverzeichnis, das im strukturierten Teil einer E-Rechnung derzeit nicht abgebildet werden kann. Deshalb wird es derzeit nicht beanstandet, wenn der strukturierte Teil nur die einzelnen Gewerke mit ihren Summen enthält. Dann muss eine eingebettete, für Menschen lesbare Anlage die Aufschlüsselung nach dem Leistungsverzeichnis enthalten, auf die der strukturierte Teil eindeutig hinweist (Randnummern 13 und 14). SheetFaktura bettet keine zusätzlichen Anlagen ein. Wenn Sie diese Erleichterung nutzen wollen, brauchen Sie dafür ein anderes Werkzeug.</p>
+
+<h2>So erstellen Sie die Schlussrechnung mit SheetFaktura</h2>
+<ol>
+<li>Die <a href="excel.html">Excel-Vorlage</a> herunterladen (oder in Google Sheets das Add-on öffnen) und die gesamte Leistung als Positionen eintragen.</li>
+<li>Im Feld <i>Bereits bezahlt (EUR)</i> die Summe der Abschlagszahlungen brutto eintragen. Der Betrag steht in der E-Rechnung im Feld BT-113, der Zahlbetrag sinkt entsprechend.</li>
+<li>Bei nur einem Steuersatz schreibt SheetFaktura die darin enthaltene Umsatzsteuer automatisch in die Rechnungsbemerkung (BT-22), zum Beispiel: „Bereits bezahlt: 23.800,00 EUR, darin enthaltene Umsatzsteuer 19 %: 3.800,00 EUR.“</li>
+<li>Im Feld <i>Bemerkung</i>, ebenfalls BT-22, die Abschläge einzeln aufführen, zum Beispiel: „Abschlagsrechnung 2026-101 vom 15.10.2026: 10.000,00 EUR netto, 1.900,00 EUR USt; Abschlagsrechnung 2026-117 vom 15.12.2026: 10.000,00 EUR netto, 1.900,00 EUR USt.“ Bei mehreren Steuersätzen geben Sie hier die Umsatzsteuer der Abschläge je Steuersatz an.</li>
+<li>Datei prüfen lassen und <i>E-Rechnung erstellen</i> klicken. Sie erhalten die XRechnung und die ZUGFeRD-PDF.</li>
+</ol>
+<p>Welche Einzelheiten zu den Teilentgelten Ihr Fall braucht, regelt Abschnitt 14.8 Absatz 7 und 8 UStAE. Klären Sie das im Zweifel mit Ihrer Steuerberatung.</p>
+<p><a class="cta" href="excel.html">Excel-Rechnung umwandeln</a> &nbsp; <a href="e-rechnung-2027-checkliste.html">Checkliste zum 1. Januar 2027</a></p>
+<p style="font-size:14px;color:var(--muted)">5 E-Rechnungen kostenlos, danach 69 Euro für 12 Monate, einmal zahlen, kein Abo, oder 4,90 Euro für 7 Tage, jeweils zuzüglich Umsatzsteuer. SheetFaktura prüft das Format Ihrer Rechnung; es ersetzt keine Steuerberatung.</p>
+
+<h2>Häufige Fragen</h2>
+<h3>Muss ich Abschlagsrechnungen aus 2026 als E-Rechnung wiederholen?</h3>
+<p>Nein. Anzahlungs-, Voraus- und Abschlagsrechnungen, die Sie vor Ihrer eigenen E-Rechnungspflicht zulässig erteilt haben, müssen nicht als E-Rechnung übermittelt werden, auch wenn Leistung und Zahlung erst danach erfolgen (BMF-Schreiben vom 15. Oktober 2026, Randnummer 2).</p>
+<h3>Wie ziehe ich die Abschläge in der Schlussrechnung als E-Rechnung ab?</h3>
+<p>Bis zum 30. Juni 2030 wird es nicht beanstandet, wenn die vereinnahmten Teilentgelte im strukturierten Teil als Summe im Feld BT-113 (Paid amount) abgezogen und die nötigen Einzelheiten im Freitextfeld BT-22 (Invoice note) angegeben werden. Alternativ ist ein eingebetteter Anhang möglich, auf den der strukturierte Teil ausdrücklich hinweist.</p>
+<h3>Darf ich statt einer Schlussrechnung eine Restrechnung stellen?</h3>
+<p>Ja. Statt einer Endrechnung kann auch eine Restrechnung erteilt werden (BMF-Schreiben vom 15. Oktober 2024, Randnummer 47).</p>
+<h3>Gilt das auch für Bauleistungen?</h3>
+<p>Ja. Zusätzlich wird es bei E-Rechnungen über Bauleistungen derzeit nicht beanstandet, wenn der strukturierte Teil nur die Gewerke mit ihren Summen enthält und eine eingebettete, lesbare Anlage die Aufschlüsselung nach dem Leistungsverzeichnis zeigt, auf die eindeutig hingewiesen wird.</p>
+
+<h2>Quellen</h2>
+<ul>
+<li>Bundesministerium der Finanzen: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2026-10-15-obligatorische-elektronische-rechnung.html" rel="noopener">Schreiben vom 15. Oktober 2026, Ergänzende Regelungen</a> (GZ III C 5 - S 7287-a/00019/021/017; Randnummern 2 bis 4, 13 und 14), <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2026-10-15-obligatorische-elektronische-rechnung.pdf?__blob=publicationFile&amp;v=2" rel="noopener">PDF</a></li>
+<li>Bundesministerium der Finanzen: <a href="https://www.bundesfinanzministerium.de/Content/DE/Downloads/BMF_Schreiben/Steuerarten/Umsatzsteuer/Umsatzsteuer-Anwendungserlass/2024-10-15-obligatorische-elektronische-rechnung.html" rel="noopener">Schreiben vom 15. Oktober 2024</a> (Randnummern 47 und 48)</li>
+<li>Bundesministerium der Finanzen: <a href="https://www.bundesfinanzministerium.de/Content/DE/FAQ/e-rechnung.html" rel="noopener">Fragen und Antworten zur E-Rechnung</a> (Frage 7b)</li>
+<li>Umsatzsteuergesetz: <a href="https://www.gesetze-im-internet.de/ustg_1980/__14.html" rel="noopener">§ 14 UStG</a> (Absatz 5) und <a href="https://www.gesetze-im-internet.de/ustg_1980/__27.html" rel="noopener">§ 27 UStG</a> (Absatz 38)</li>
+</ul>
+<p>Stand: November 2026. Diese Seite ist keine Steuerberatung; im Einzelfall klären Sie Fragen bitte mit Ihrer Steuerberatung.</p>
+
+</div></main>
+<footer><div class="wrap"><a href="index.html">SheetFaktura</a><a href="excel.html">SheetFaktura für Excel</a><a href="xrechnung-google-sheets.html">XRechnung in Google Sheets</a><a href="zugferd-google-sheets.html">ZUGFeRD in Google Sheets</a><a href="e-rechnung-pflicht.html">E-Rechnungspflicht</a><a href="e-rechnung-2027-checkliste.html">Checkliste 2027</a><a href="e-rechnung-800000-euro-gesamtumsatz.html">800.000 Euro Gesamtumsatz</a><a href="abschlagsrechnung-schlussrechnung-e-rechnung.html">Abschlags- und Schlussrechnung</a><a href="rechnung-an-behoerden-xrechnung.html">Rechnung an Behörden</a><a href="xrechnung-aus-excel.html">XRechnung aus Excel</a><a href="e-rechnung-kleinunternehmer.html">E-Rechnung für Kleinunternehmer</a><a href="e-rechnung-beispiele.html">E-Rechnung Beispiele</a><a href="leitweg-id.html">Leitweg-ID prüfen</a><a href="impressum.html">Impressum / Legal notice</a><a href="datenschutz.html">Datenschutz</a><a href="privacy.html">Privacy</a><a href="agb.html">AGB</a><a href="terms.html">Terms</a><a href="hilfe.html">Hilfe</a><a href="help.html">Help</a></div></footer>
+</body>
+</html>
